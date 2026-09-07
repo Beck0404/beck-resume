@@ -3,8 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>范鈞豪 Chun-Hao Fan, DVM · Veterinarian × Brand & Marketing</title>
-<meta name="description" content="Chun-Hao (Beck) Fan, DVM — licensed veterinarian turned pet-industry brand &amp; product marketer. Companion animal health, nutrition and marketing.">
+<title>范鈞豪 Chun-Hao Fan, DVM · Veterinarian × Product & Brand</title>
+<meta name="description" content="范鈞豪 Chun-Hao (Beck) Fan, DVM — 執照獸醫師轉戰寵物產業的產品開發經理：新品開發、法規合規、品牌行銷，並以 AI 自建內部工具鏈。Licensed veterinarian turned pet-industry product development manager — product, regulatory, brand, and AI-built internal tools.">
+<link rel="canonical" href="https://beck-resume.beck810404.workers.dev/">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="范鈞豪 Chun-Hao Fan, DVM · 獸醫師 × 產品開發 × 品牌行銷">
+<meta property="og:description" content="走出診間的獸醫，把臨床專業帶進產品與品牌。6 品牌 × 9 市場新品開發與法規；以 AI 自建 8 個內部工具與每日資料流水線。">
+<meta property="og:url" content="https://beck-resume.beck810404.workers.dev/">
+<meta property="og:image" content="https://beck-resume.beck810404.workers.dev/img/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
@@ -160,6 +170,8 @@
     height:158px;display:flex;align-items:center;justify-content:center;font-size:2.6rem;
     position:relative;overflow:hidden;
   }
+  .proj .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .proj .thumb.has-img::after{display:none}
   .proj .thumb::after{content:"image placeholder · 圖片佔位";position:absolute;bottom:8px;right:10px;font-size:.62rem;color:rgba(255,255,255,.7);letter-spacing:.03em}
   .t1{background:linear-gradient(135deg,#0d7d6b,#0a5d50)}
   .t2{background:linear-gradient(135deg,#b08948,#8a6a35)}
@@ -574,7 +586,7 @@
         <div class="tags"><span class="tag">Tech Transfer</span><span class="tag">Formulation</span><span class="tag">Launch</span></div>
       </div></div>
 
-      <div class="proj reveal d2"><div class="thumb t5">🛡️</div><div class="body">
+      <div class="proj reveal d2"><div class="thumb t5 has-img"><img src="img/demo/pet-food-regulations.jpg" alt="" loading="lazy"></div><div class="body">
         <h3><span class="zh">法規與宣稱合規 · TW／US／JP</span><span class="en">Regulatory &amp; Claims Compliance</span></h3>
         <p><span class="zh">配方、包裝與宣稱對齊台灣食安法、AAFCO、日本薬機法／景表法；包裝稿三方比對，降低標示與法規風險。</span><span class="en">Formulation, packaging and claims aligned to Taiwan Food Safety Act, AAFCO and Japan Yakukihō / Keihyōhō; three-way proof checks to cut labeling risk.</span></p>
         <div class="tags"><span class="tag">Compliance</span><span class="tag">QA</span></div>
@@ -586,7 +598,7 @@
         <div class="tags"><span class="tag">Market Insight</span><span class="tag">Sourcing</span></div>
       </div></div>
 
-      <div class="proj reveal d4"><div class="thumb t8">🤖</div><div class="body">
+      <div class="proj reveal d4"><div class="thumb t8 has-img"><img src="img/proj-ai-toolchain.jpg" alt="" loading="lazy"></div><div class="body">
         <h3><span class="zh">AI 內部工具鏈</span><span class="en">AI Internal Toolchain</span></h3>
         <p><span class="zh">以 Claude 為共同開發者，做出 8 個內部網站（品質溯源、新品看板、產品資訊儀表板、成本試算、法規索引…）與每天 16:00 自動跑的資料流水線，全部跑在免費方案上。</span><span class="en">With Claude as co-developer, built 8 internal web tools (quality traceability, product Kanban, product dashboard, cost calculator, regulations index…) and a daily 16:00 data pipeline — all on free tiers.</span></p>
         <div class="tags"><span class="tag">Claude</span><span class="tag">Automation</span><span class="tag">Cloudflare</span></div>
