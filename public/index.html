@@ -146,7 +146,7 @@
   .stat .l{font-size:.8rem;color:var(--muted);margin-top:.45rem;font-weight:500}
 
   /* EXPERIENCE TIMELINE */
-  #experience{background:var(--paper-2)}
+  #projects{background:var(--paper-2)}
   .timeline{position:relative;margin-left:8px}
   .timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent),var(--line))}
   .tl-item{position:relative;padding:0 0 38px 42px}
@@ -267,12 +267,34 @@
     .nav-links a{padding:.7rem .6rem}
     .nav-toggle{display:flex}
     .proj-grid{grid-template-columns:1fr}
-    .stats{grid-template-columns:1fr 1fr 1fr}
+    .stats{grid-template-columns:1fr 1fr}
     .hero-photo{width:150px;height:150px}
     section{padding:70px 0}
     .hero{padding:140px 0 70px}
     .contact-card{padding:40px 28px}
     .lang-toggle{order:-1}
+  }
+
+  /* ---------- PRINT ---------- */
+  @media print{
+    header,.nav-toggle,.tl-more,#demo,.hero::before,.hero::after,.contact-card::before,.contact-card::after,.dm-kbd{display:none!important}
+    body{background:#fff;color:#000;font-size:11pt}
+    .reveal{opacity:1!important;transform:none!important;transition:none!important}
+    .tl-card.collapsed ul{display:block!important}
+    section,.hero{padding:18pt 0!important}
+    .hero{padding-top:0!important}
+    .hero-photo{width:110pt;height:110pt}
+    .hero-photo img{border-width:2pt;box-shadow:none}
+    .about-side{position:static}
+    .stat,.chapter,.tl-card,.proj,.panel,.award,.quote,.cap{break-inside:avoid;box-shadow:none!important}
+    .proj-grid{grid-template-columns:1fr 1fr 1fr 1fr}
+    .proj .thumb{height:70pt}
+    .btn,.c-btn{border:1px solid #999!important;background:none!important;color:#000!important;box-shadow:none!important;transform:none!important}
+    .btn-primary::after,.c-btn.solid::after{content:" " attr(href);font-weight:400;font-size:.8em}
+    .contact-card{background:#fff!important;color:#000!important;border:1px solid #ccc}
+    .contact-card p{color:#333!important}
+    a{color:inherit}
+    .fill{transition:none}
   }
 
   /* ---------- DEMO MODE（隱藏入口：網址 #demo 或連按 D 三下） ---------- */
@@ -383,8 +405,8 @@
     <a href="#top" class="brand"><span class="dot"></span><span class="zh">范鈞豪</span><span class="en">Chun-Hao Fan</span></a>
     <div class="nav-links" id="navlinks">
       <a href="#about"><span class="zh">關於我</span><span class="en">About</span></a>
-      <a href="#experience"><span class="zh">經歷</span><span class="en">Experience</span></a>
       <a href="#projects"><span class="zh">作品專案</span><span class="en">Projects</span></a>
+      <a href="#experience"><span class="zh">經歷</span><span class="en">Experience</span></a>
       <a href="#skills"><span class="zh">技能工具</span><span class="en">Skills</span></a>
       <a href="#contact"><span class="zh">聯絡</span><span class="en">Contact</span></a>
       <div class="lang-toggle" role="group" aria-label="language">
@@ -404,9 +426,10 @@
       <span class="zh">范鈞豪</span><span class="en">Chun-Hao Fan</span>
       <span class="alt"><span class="zh">Beck Fan · Chun-Hao Fan</span><span class="en">范鈞豪 · Beck</span></span>
     </h1>
-    <div class="role reveal d2"><span class="zh">獸醫師 × 產品開發 × 品牌行銷 · 現任珍食堡產品開發經理</span><span class="en">Veterinarian × Product Development × Brand Marketing · Product Development Manager, Jasper Petcare</span></div>
+    <div class="role reveal d2"><span class="zh">獸醫師 × 產品開發 × 品牌行銷</span><span class="en">Veterinarian × Product Development × Brand Marketing</span></div>
     <p class="tagline reveal d2"><span class="zh">六年寵物產業，走過經銷商、品牌商、製造商，做過行銷、產品與法規。把臨床專業，轉化成獸醫師與飼主聽得懂的產品與品牌價值；再用 AI 把重複的工作做成系統。</span><span class="en">Six years across distributor, brand and manufacturer roles in companion-animal products — marketing, product and regulatory. Turning clinical expertise into product and brand value that vets and pet owners trust — and turning repetitive work into systems with AI.</span></p>
     <div class="meta reveal d3">
+      <span>🏢 <span class="zh">現任珍食堡實業 產品開發經理</span><span class="en">Product Development Manager, Jasper Petcare</span></span>
       <span>📍 <span class="zh">台北 · 台灣</span><span class="en">Taipei, Taiwan</span></span>
       <span>🎓 <span class="zh">執照獸醫師 · 台大臨床獸醫碩士</span><span class="en">Licensed DVM · MSc, NTU Veterinary Medicine</span></span>
       <span>🏅 PMP · CSM · CSPO</span>
@@ -474,6 +497,67 @@
   </div>
 </section>
 
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag"><span class="zh">作品 · 專案</span><span class="en">Selected Work</span></div>
+      <h2><span class="zh">把專業變成可被複製的成果</span><span class="en">Turning expertise into repeatable outcomes</span></h2>
+    </div>
+    <div class="proj-grid">
+
+      <div class="proj reveal d1"><div class="thumb t1 has-img"><img src="img/proj-training.jpg" alt="" loading="lazy"></div><div class="body">
+        <h3><span class="zh">通路與獸醫師教育</span><span class="en">Channel &amp; Veterinary Education</span></h3>
+        <p><span class="zh">為 PetPark、THL 等通路夥伴、寵物店與動物醫院設計產品與營養訓練，把成分與臨床證據轉成一線可用的話術。</span><span class="en">Product and nutrition training for channel partners (PetPark, THL), retailers and veterinary hospitals — turning ingredients and clinical evidence into front-line messaging.</span></p>
+        <div class="tags"><span class="tag">Vet Channel</span><span class="tag">Training</span><span class="tag">Technical Marketing</span></div>
+      </div></div>
+
+      <div class="proj reveal d2"><div class="thumb t2 has-img"><img src="img/proj-expo.jpg" alt="" loading="lazy"></div><div class="body">
+        <h3><span class="zh">整合行銷 campaign</span><span class="en">Integrated Brand Campaigns</span></h3>
+        <p><span class="zh">年度 GTM 與 campaign 行事曆，串起寵物展活動、KOL／KOC 合作、Meta／Google／LINE 與交通媒體採買。</span><span class="en">Annual GTM and campaign calendars tying together pet expo activations, KOL/KOC programs and Meta/Google/LINE/transit media buys.</span></p>
+        <div class="tags"><span class="tag">Campaign</span><span class="tag">Media</span><span class="tag">KOL</span></div>
+      </div></div>
+
+      <div class="proj reveal d3"><div class="thumb t3 has-img"><img src="img/proj-amazon.jpg" alt="" loading="lazy"></div><div class="body">
+        <h3><span class="zh">電商與跨境成長</span><span class="en">E-commerce &amp; Cross-border Growth</span></h3>
+        <p><span class="zh">台灣電商營收成長 600%；接手 Amazon 日本店讓營收翻倍並導入新品，同步操盤美國店廣告與旗艦店。</span><span class="en">600% Taiwan e-commerce growth; doubled Amazon Japan revenue and launched new SKUs; ran US store ads and storefront.</span></p>
+        <div class="tags"><span class="tag">Amazon</span><span class="tag">Growth</span><span class="tag">Digital</span></div>
+      </div></div>
+
+      <div class="proj reveal d1"><div class="thumb t4 has-img"><img src="img/proj-sunten.jpg" alt="" loading="lazy"></div><div class="body">
+        <h3><span class="zh">順天堂功能保健合作</span><span class="en">Sun Ten Functional Supplements</span></h3>
+        <p><span class="zh">推動與順天堂藥廠合作，開發關節、毛髮、視力、心血管的功能性保健品，從配方邏輯到宣稱邊界一起把關。</span><span class="en">Partnered with Sun Ten Pharmaceutical on joint, coat, vision and cardiovascular supplements — from formulation logic to claim boundaries.</span></p>
+        <div class="tags"><span class="tag">Pharma Partnership</span><span class="tag">Formulation</span></div>
+      </div></div>
+
+      <div class="proj reveal d3"><div class="thumb t7 has-img"><img src="img/proj-postbiotic.jpg" alt="" loading="lazy"></div><div class="body">
+        <h3><span class="zh">後生元功能性產品開發</span><span class="en">Postbiotic Functional Product</span></h3>
+        <p><span class="zh">到職半年內主導導入臺大動科系技術移轉的後生元原料，克服既有製程造成的機能流失，把學術概念轉成飼主聽得懂的產品價值並導入通路。</span><span class="en">Within six months, led adoption of an NTU-licensed postbiotic ingredient, solved process-induced functional loss, and turned an academic concept into a product pet owners understand — then into retail.</span></p>
+        <div class="tags"><span class="tag">Tech Transfer</span><span class="tag">Formulation</span><span class="tag">Launch</span></div>
+      </div></div>
+
+      <div class="proj reveal d2"><div class="thumb t5 has-img"><img src="img/demo/pet-food-regulations.jpg" alt="" loading="lazy"></div><div class="body">
+        <h3><span class="zh">法規與宣稱合規 · TW／US／JP</span><span class="en">Regulatory &amp; Claims Compliance</span></h3>
+        <p><span class="zh">配方、包裝與宣稱對齊台灣食安法、AAFCO、日本薬機法／景表法；包裝稿三方比對，降低標示與法規風險。</span><span class="en">Formulation, packaging and claims aligned to Taiwan Food Safety Act, AAFCO and Japan Yakukihō / Keihyōhō; three-way proof checks to cut labeling risk.</span></p>
+        <div class="tags"><span class="tag">Compliance</span><span class="tag">QA</span></div>
+      </div></div>
+
+      <div class="proj reveal d3"><div class="thumb t6 has-img"><img src="img/proj-tradeshows.jpg" alt="" loading="lazy"></div><div class="body">
+        <h3><span class="zh">國際展會競品研究</span><span class="en">Global Trade-Show Research</span></h3>
+        <p><span class="zh">每年走訪 Interzoo、Global Pet Expo、SuperZoo、Interpet、VIV Asia 等 6+ 展會，做競品分析、原料趨勢與供應商談判。</span><span class="en">6+ shows a year — Interzoo, Global Pet Expo, SuperZoo, Interpet, VIV Asia — for competitor analysis, ingredient trends and supplier talks.</span></p>
+        <div class="tags"><span class="tag">Market Insight</span><span class="tag">Sourcing</span></div>
+      </div></div>
+
+      <div class="proj reveal d4"><div class="thumb t8 has-img"><img src="img/proj-ai-toolchain.jpg" alt="" loading="lazy"></div><div class="body">
+        <h3><span class="zh">AI 內部工具鏈</span><span class="en">AI Internal Toolchain</span></h3>
+        <p><span class="zh">以 Claude 為共同開發者，做出 8 個內部網站（品質溯源、新品看板、產品資訊儀表板、成本試算、法規索引…）與每天 16:00 自動跑的資料流水線，全部跑在免費方案上。</span><span class="en">With Claude as co-developer, built 8 internal web tools (quality traceability, product Kanban, product dashboard, cost calculator, regulations index…) and a daily 16:00 data pipeline — all on free tiers.</span></p>
+        <div class="tags"><span class="tag">Claude</span><span class="tag">Automation</span><span class="tag">Cloudflare</span></div>
+      </div></div>
+
+    </div>
+  </div>
+</section>
+
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="wrap">
@@ -505,13 +589,11 @@
           <h3><span class="zh">行銷經理</span><span class="en">Marketing Manager</span></h3>
           <div class="tl-co">Jasper Petcare <span class="loc">· <span class="zh">新北 · 台灣 · 2024 年度優秀主管</span><span class="en">New Taipei, Taiwan · 2024 Outstanding Manager</span></span></div>
           <ul>
-            <li><span class="zh"><strong>品牌計畫：</strong>制定各品牌年度 GTM、campaign 行事曆與預算，建立公司通用的上市 playbook。</span><span class="en"><strong>Brand planning:</strong> Owned annual GTM plans, campaign calendars and budgets by brand; built company-wide launch playbooks.</span></li>
-            <li><span class="zh"><strong>整合行銷：</strong>規劃執行寵物展、KOL／KOC 合作、數位與媒體採買，線上線下一體。</span><span class="en"><strong>Integrated campaigns:</strong> Planned and executed pet expos, KOL/KOC programs, digital and media buys across online and offline touchpoints.</span></li>
+            <li><span class="zh"><strong>品牌計畫與整合行銷：</strong>制定各品牌年度 GTM、campaign 行事曆與預算；規劃執行寵物展、KOL／KOC 合作、數位與媒體採買，建立公司通用的上市 playbook。</span><span class="en"><strong>Brand planning &amp; integrated campaigns:</strong> Owned annual GTM plans, calendars and budgets by brand; ran pet expos, KOL/KOC programs and media buys; built company-wide launch playbooks.</span></li>
             <li><span class="zh"><strong>通路教育：</strong>為 PetPark、THL 等通路夥伴與內部業務做產品與營養訓練，統一銷售話術。</span><span class="en"><strong>Channel education:</strong> Product and nutrition training for channel partners (PetPark, THL Group) and sales teams to align messaging.</span></li>
             <li><span class="zh"><strong>電商成長：</strong>台灣電商營收成長 600%，Amazon 日本店營收翻倍並導入新品，同時操盤美國店廣告。</span><span class="en"><strong>E-commerce growth:</strong> 600% Taiwan e-commerce growth; doubled Amazon Japan revenue and launched new SKUs; ran US store advertising.</span></li>
             <li><span class="zh"><strong>團隊重建：</strong>加入時前一批成員集體離職；從組織設計與權責分工重建，帶 8 人跨職能團隊（行銷、產品、設計、電商）結合 PMP 與 Agile 準時推出 100+ SKU，一年後部門獨立成立台北辦公室。</span><span class="en"><strong>Team rebuild:</strong> Inherited a department after its team left en masse; rebuilt from org design and role definitions, led an 8-person cross-functional team (PMP + Agile) to 100+ SKUs on schedule, and spun the department off into its own Taipei office within a year.</span></li>
-            <li><span class="zh"><strong>產品創新：</strong>到職半年內主導導入臺大動科系技轉的後生元原料，克服製程造成的機能流失，打造差異化產品並導入通路。</span><span class="en"><strong>Product innovation:</strong> Within six months, led adoption of an NTU-licensed postbiotic ingredient, solved process-induced functional loss, and launched a differentiated product into retail.</span></li>
-            <li><span class="zh"><strong>食品安全：</strong>以獸醫師身分主動加入食安小組，建立內外部檢驗機制與更高允收標準，將品質管理制度化。</span><span class="en"><strong>Food safety:</strong> Joined the food-safety task force as the in-house vet; set up internal/external testing and stricter acceptance criteria, institutionalizing quality management.</span></li>
+            <li><span class="zh"><strong>產品創新與食安：</strong>到職半年內主導導入臺大動科系技轉的後生元原料並克服製程機能流失；以獸醫師身分加入食安小組，建立內外部檢驗機制與更高允收標準。</span><span class="en"><strong>Product innovation &amp; food safety:</strong> Within six months, led adoption of an NTU-licensed postbiotic ingredient and solved process-induced functional loss; joined the food-safety task force as in-house vet, setting up internal/external testing and stricter acceptance criteria.</span></li>
           </ul>
           <button class="tl-more"><span class="zh">展開細節 ↓</span><span class="en">Show details ↓</span></button>
         </div>
@@ -575,67 +657,6 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-tag"><span class="zh">作品 · 專案</span><span class="en">Selected Work</span></div>
-      <h2><span class="zh">把專業變成可被複製的成果</span><span class="en">Turning expertise into repeatable outcomes</span></h2>
-    </div>
-    <div class="proj-grid">
-
-      <div class="proj reveal d1"><div class="thumb t1 has-img"><img src="img/proj-training.jpg" alt="" loading="lazy"></div><div class="body">
-        <h3><span class="zh">通路與獸醫師教育</span><span class="en">Channel &amp; Veterinary Education</span></h3>
-        <p><span class="zh">為 PetPark、THL 等通路夥伴、寵物店與動物醫院設計產品與營養訓練，把成分與臨床證據轉成一線可用的話術。</span><span class="en">Product and nutrition training for channel partners (PetPark, THL), retailers and veterinary hospitals — turning ingredients and clinical evidence into front-line messaging.</span></p>
-        <div class="tags"><span class="tag">Vet Channel</span><span class="tag">Training</span><span class="tag">Technical Marketing</span></div>
-      </div></div>
-
-      <div class="proj reveal d2"><div class="thumb t2 has-img"><img src="img/proj-expo.jpg" alt="" loading="lazy"></div><div class="body">
-        <h3><span class="zh">整合行銷 campaign</span><span class="en">Integrated Brand Campaigns</span></h3>
-        <p><span class="zh">年度 GTM 與 campaign 行事曆，串起寵物展活動、KOL／KOC 合作、Meta／Google／LINE 與交通媒體採買。</span><span class="en">Annual GTM and campaign calendars tying together pet expo activations, KOL/KOC programs and Meta/Google/LINE/transit media buys.</span></p>
-        <div class="tags"><span class="tag">Campaign</span><span class="tag">Media</span><span class="tag">KOL</span></div>
-      </div></div>
-
-      <div class="proj reveal d3"><div class="thumb t3 has-img"><img src="img/proj-amazon.jpg" alt="" loading="lazy"></div><div class="body">
-        <h3><span class="zh">電商與跨境成長</span><span class="en">E-commerce &amp; Cross-border Growth</span></h3>
-        <p><span class="zh">台灣電商營收成長 600%；接手 Amazon 日本店讓營收翻倍並導入新品，同步操盤美國店廣告與旗艦店。</span><span class="en">600% Taiwan e-commerce growth; doubled Amazon Japan revenue and launched new SKUs; ran US store ads and storefront.</span></p>
-        <div class="tags"><span class="tag">Amazon</span><span class="tag">Growth</span><span class="tag">Digital</span></div>
-      </div></div>
-
-      <div class="proj reveal d1"><div class="thumb t4 has-img"><img src="img/proj-sunten.jpg" alt="" loading="lazy"></div><div class="body">
-        <h3><span class="zh">順天堂功能保健合作</span><span class="en">Sun Ten Functional Supplements</span></h3>
-        <p><span class="zh">推動與順天堂藥廠合作，開發關節、毛髮、視力、心血管的功能性保健品，從配方邏輯到宣稱邊界一起把關。</span><span class="en">Partnered with Sun Ten Pharmaceutical on joint, coat, vision and cardiovascular supplements — from formulation logic to claim boundaries.</span></p>
-        <div class="tags"><span class="tag">Pharma Partnership</span><span class="tag">Formulation</span></div>
-      </div></div>
-
-      <div class="proj reveal d3"><div class="thumb t7 has-img"><img src="img/proj-postbiotic.jpg" alt="" loading="lazy"></div><div class="body">
-        <h3><span class="zh">後生元功能性產品開發</span><span class="en">Postbiotic Functional Product</span></h3>
-        <p><span class="zh">到職半年內主導導入臺大動科系技術移轉的後生元原料，克服既有製程造成的機能流失，把學術概念轉成飼主聽得懂的產品價值並導入通路。</span><span class="en">Within six months, led adoption of an NTU-licensed postbiotic ingredient, solved process-induced functional loss, and turned an academic concept into a product pet owners understand — then into retail.</span></p>
-        <div class="tags"><span class="tag">Tech Transfer</span><span class="tag">Formulation</span><span class="tag">Launch</span></div>
-      </div></div>
-
-      <div class="proj reveal d2"><div class="thumb t5 has-img"><img src="img/demo/pet-food-regulations.jpg" alt="" loading="lazy"></div><div class="body">
-        <h3><span class="zh">法規與宣稱合規 · TW／US／JP</span><span class="en">Regulatory &amp; Claims Compliance</span></h3>
-        <p><span class="zh">配方、包裝與宣稱對齊台灣食安法、AAFCO、日本薬機法／景表法；包裝稿三方比對，降低標示與法規風險。</span><span class="en">Formulation, packaging and claims aligned to Taiwan Food Safety Act, AAFCO and Japan Yakukihō / Keihyōhō; three-way proof checks to cut labeling risk.</span></p>
-        <div class="tags"><span class="tag">Compliance</span><span class="tag">QA</span></div>
-      </div></div>
-
-      <div class="proj reveal d3"><div class="thumb t6 has-img"><img src="img/proj-tradeshows.jpg" alt="" loading="lazy"></div><div class="body">
-        <h3><span class="zh">國際展會競品研究</span><span class="en">Global Trade-Show Research</span></h3>
-        <p><span class="zh">每年走訪 Interzoo、Global Pet Expo、SuperZoo、Interpet、VIV Asia 等 6+ 展會，做競品分析、原料趨勢與供應商談判。</span><span class="en">6+ shows a year — Interzoo, Global Pet Expo, SuperZoo, Interpet, VIV Asia — for competitor analysis, ingredient trends and supplier talks.</span></p>
-        <div class="tags"><span class="tag">Market Insight</span><span class="tag">Sourcing</span></div>
-      </div></div>
-
-      <div class="proj reveal d4"><div class="thumb t8 has-img"><img src="img/proj-ai-toolchain.jpg" alt="" loading="lazy"></div><div class="body">
-        <h3><span class="zh">AI 內部工具鏈</span><span class="en">AI Internal Toolchain</span></h3>
-        <p><span class="zh">以 Claude 為共同開發者，做出 8 個內部網站（品質溯源、新品看板、產品資訊儀表板、成本試算、法規索引…）與每天 16:00 自動跑的資料流水線，全部跑在免費方案上。</span><span class="en">With Claude as co-developer, built 8 internal web tools (quality traceability, product Kanban, product dashboard, cost calculator, regulations index…) and a daily 16:00 data pipeline — all on free tiers.</span></p>
-        <div class="tags"><span class="tag">Claude</span><span class="tag">Automation</span><span class="tag">Cloudflare</span></div>
-      </div></div>
-
-    </div>
-  </div>
-</section>
-
 <!-- SKILLS -->
 <section id="skills">
   <div class="wrap">
@@ -660,7 +681,7 @@
         <div class="panel reveal d1">
           <h3><span class="ic">🧰</span><span class="zh">工具與平台</span><span class="en">Tools & Platforms</span></h3>
           <div class="chips">
-            <span class="chip">Meta / Google Ads</span><span class="chip">LINE@</span><span class="chip">KOL / KOC</span><span class="chip">Pet Expos</span><span class="chip">POP / Merchandising</span><span class="chip">Amazon Seller / Ads</span><span class="chip">momo · PChome · 91APP</span><span class="chip">PMP / Agile</span><span class="chip">AAFCO</span><span class="chip">薬機法 / 景表法</span><span class="chip">Anthropic Claude</span><span class="chip">ChatGPT / Codex</span><span class="chip">Google Gemini</span><span class="chip">Excel / PowerPoint</span>
+            <span class="chip">Meta / Google Ads</span><span class="chip">LINE@</span><span class="chip">KOL / KOC</span><span class="chip">Pet Expos</span><span class="chip">POP / Merchandising</span><span class="chip">Amazon Seller / Ads</span><span class="chip">momo · PChome · 91APP</span><span class="chip">PMP / Agile</span><span class="chip">AAFCO</span><span class="chip">薬機法 / 景表法</span><span class="chip">Anthropic Claude</span><span class="chip">ChatGPT / Codex</span><span class="chip">Google Gemini</span><span class="chip"><span class="zh">Python · HTML（AI 協作）</span><span class="en">Python · HTML (AI-assisted)</span></span>
           </div>
         </div>
       </div>
@@ -736,14 +757,22 @@
 (function(){
   var body=document.body;
   // language toggle
+  function setLang(set,remember){
+    set = set==='en'?'en':'zh';
+    body.setAttribute('data-lang',set);
+    document.documentElement.lang = set==='en'?'en':'zh-Hant';
+    document.querySelectorAll('.lang-toggle button').forEach(function(x){x.classList.toggle('on',x.dataset.set===set)});
+    if(remember){ try{localStorage.setItem('lang',set);}catch(e){} }
+  }
   document.querySelectorAll('.lang-toggle button').forEach(function(b){
-    b.addEventListener('click',function(){
-      var set=b.dataset.set;
-      body.setAttribute('data-lang',set);
-      document.documentElement.lang = set==='en'?'en':'zh-Hant';
-      document.querySelectorAll('.lang-toggle button').forEach(function(x){x.classList.toggle('on',x.dataset.set===set)});
-    });
+    b.addEventListener('click',function(){ setLang(b.dataset.set,true); });
   });
+  // 初始語言：網址 ?lang=en|zh > 上次選擇 > 中文
+  (function(){
+    var q=new URLSearchParams(location.search).get('lang'), saved=null;
+    try{saved=localStorage.getItem('lang');}catch(e){}
+    if(q==='en'||q==='zh')setLang(q,true); else if(saved)setLang(saved,false);
+  })();
   // mobile menu
   var navT=document.getElementById('navToggle'), links=document.getElementById('navlinks');
   navT.addEventListener('click',function(){links.classList.toggle('open');navT.classList.toggle('act')});
