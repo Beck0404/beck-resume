@@ -98,6 +98,10 @@
   .hero .tagline{font-size:1.05rem;color:var(--ink-soft);max-width:640px;margin-bottom:.4rem}
   .hero .meta{display:flex;flex-wrap:wrap;gap:1.2rem;color:var(--muted);font-size:.95rem;margin:1.4rem 0 2.2rem}
   .hero .meta span{display:inline-flex;align-items:center;gap:.45rem}
+  .hero-grid{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+  .hero-photo{position:relative;width:300px;height:300px;justify-self:end}
+  .hero-photo::before{content:"";position:absolute;inset:-14px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--accent-soft),rgba(227,241,238,0) 70%)}
+  .hero-photo img{position:relative;width:100%;height:100%;border-radius:50%;object-fit:cover;border:6px solid var(--white);box-shadow:var(--shadow-md)}
   .cta{display:flex;flex-wrap:wrap;gap:.9rem}
   .btn{
     display:inline-flex;align-items:center;gap:.55rem;font-weight:600;font-size:.97rem;
@@ -129,11 +133,17 @@
   .chapter p{font-size:.93rem;color:var(--muted);margin:0}
   .quote{margin-top:1.6rem;padding:22px 26px;border-left:3px solid var(--gold);background:var(--white);border-radius:0 var(--r) var(--r) 0;font-family:var(--serif);font-size:1.12rem;line-height:1.55;color:var(--ink)}
   .quote small{display:block;font-family:var(--font);font-size:.82rem;color:var(--muted);margin-top:.6rem;font-weight:500}
-  .stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;position:sticky;top:96px}
-  .stat{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:24px 22px;transition:.28s}
+  .about-side{position:sticky;top:96px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .award{margin:14px 0 0;background:var(--white);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:.28s}
+  .award:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--accent-soft)}
+  .award img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 38%;display:block}
+  .award figcaption{padding:12px 16px 14px;font-size:.82rem;color:var(--muted);line-height:1.45}
+  .award figcaption b{display:block;color:var(--ink);font-size:.92rem;margin-bottom:.15rem}
+  .stat{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:18px 16px;transition:.28s}
   .stat:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--accent-soft)}
-  .stat .n{font-family:var(--serif);font-size:2.5rem;font-weight:600;color:var(--accent-deep);line-height:1}
-  .stat .l{font-size:.86rem;color:var(--muted);margin-top:.5rem;font-weight:500}
+  .stat .n{font-family:var(--serif);font-size:2.1rem;font-weight:600;color:var(--accent-deep);line-height:1}
+  .stat .l{font-size:.8rem;color:var(--muted);margin-top:.45rem;font-weight:500}
 
   /* EXPERIENCE TIMELINE */
   #experience{background:var(--paper-2)}
@@ -173,7 +183,6 @@
   }
   .proj .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .proj .thumb.has-img::after{display:none}
-  .proj .thumb::after{content:"image placeholder · 圖片佔位";position:absolute;bottom:8px;right:10px;font-size:.62rem;color:rgba(255,255,255,.7);letter-spacing:.03em}
   .t1{background:linear-gradient(135deg,#0d7d6b,#0a5d50)}
   .t2{background:linear-gradient(135deg,#b08948,#8a6a35)}
   .t3{background:linear-gradient(135deg,#3a4a8c,#26306b)}
@@ -247,7 +256,9 @@
   /* RESPONSIVE */
   @media(max-width:900px){
     .about-grid,.skills-grid{grid-template-columns:1fr;gap:34px}
-    .stats{position:static}
+    .about-side{position:static}
+    .hero-grid{grid-template-columns:1fr}
+    .hero-photo{justify-self:start;width:200px;height:200px;order:-1}
     .proj-grid{grid-template-columns:1fr 1fr}
   }
   @media(max-width:680px){
@@ -256,7 +267,8 @@
     .nav-links a{padding:.7rem .6rem}
     .nav-toggle{display:flex}
     .proj-grid{grid-template-columns:1fr}
-    .stats{grid-template-columns:1fr 1fr}
+    .stats{grid-template-columns:1fr 1fr 1fr}
+    .hero-photo{width:150px;height:150px}
     section{padding:70px 0}
     .hero{padding:140px 0 70px}
     .contact-card{padding:40px 28px}
@@ -386,7 +398,8 @@
 
 <!-- HERO -->
 <section class="hero" style="padding-top:170px">
-  <div class="wrap">
+  <div class="wrap hero-grid">
+   <div class="hero-text">
     <h1 class="reveal d1">
       <span class="zh">范鈞豪</span><span class="en">Chun-Hao Fan</span>
       <span class="alt"><span class="zh">Beck Fan · Chun-Hao Fan</span><span class="en">范鈞豪 · Beck</span></span>
@@ -404,6 +417,8 @@
       <a href="Beck_Fan_CV.pdf" target="_blank" rel="noopener" class="btn btn-ghost">⤓ <span class="zh">下載 CV（PDF）</span><span class="en">Download CV (PDF)</span></a>
       <a href="https://www.linkedin.com/in/chun-hao-fan" target="_blank" rel="noopener" class="btn btn-ghost"><svg class="li" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg> <span class="zh">LinkedIn 個人檔案</span><span class="en">LinkedIn profile</span></a>
     </div>
+   </div>
+   <div class="hero-photo reveal d2"><img src="img/portrait.jpg" alt="范鈞豪 Chun-Hao Fan" width="600" height="600"></div>
   </div>
 </section>
 
@@ -441,6 +456,7 @@
         </div>
         <blockquote class="quote reveal d2"><span class="zh">即使從商，也要成為有良心的商人；<br>即使不在臨床，也要持續守護動物健康。</span><span class="en">Even in business, be a merchant with a conscience.<br>Even outside the clinic, keep guarding animal health.</span><small><span class="zh">支撐我每一個產品與品質決策的核心價值</span><span class="en">The value behind every product and quality decision I make</span></small></blockquote>
       </div>
+      <div class="about-side">
       <div class="stats">
         <div class="stat reveal d1"><div class="n" data-count="100" data-suffix="+">0</div><div class="l"><span class="zh">準時上市 SKU</span><span class="en">SKUs launched on time</span></div></div>
         <div class="stat reveal d2"><div class="n" data-count="9">0</div><div class="l"><span class="zh">國際市場</span><span class="en">Int'l markets</span></div></div>
@@ -448,6 +464,11 @@
         <div class="stat reveal d4"><div class="n" data-count="6" data-suffix="+">0</div><div class="l"><span class="zh">國際展會 / 年</span><span class="en">Int'l trade shows / yr</span></div></div>
         <div class="stat reveal d5"><div class="n" data-count="6">0</div><div class="l"><span class="zh">負責品牌</span><span class="en">Brands in portfolio</span></div></div>
         <div class="stat reveal d5"><div class="n" data-count="8">0</div><div class="l"><span class="zh">AI 自建工具</span><span class="en">AI-built tools shipped</span></div></div>
+      </div>
+      <figure class="award reveal d3">
+        <img src="img/award-2024.jpg" alt="" loading="lazy" width="800" height="1000">
+        <figcaption><b>🏅 <span class="zh">2024 年度優秀主管獎</span><span class="en">2024 Outstanding Manager of the Year</span></b><span class="zh">珍食堡實業 · 從零重建行銷團隊一年後獲頒</span><span class="en">Jasper Petcare · one year after rebuilding the marketing team from zero</span></figcaption>
+      </figure>
       </div>
     </div>
   </div>
@@ -555,35 +576,34 @@
     <div class="sec-head reveal">
       <div class="sec-tag"><span class="zh">作品 · 專案</span><span class="en">Selected Work</span></div>
       <h2><span class="zh">把專業變成可被複製的成果</span><span class="en">Turning expertise into repeatable outcomes</span></h2>
-      <p><span class="zh">縮圖為佔位圖，可換成實際截圖或產品照。</span><span class="en">Thumbnails are placeholders — swap in real images.</span></p>
     </div>
     <div class="proj-grid">
 
-      <div class="proj reveal d1"><div class="thumb t1">🩺</div><div class="body">
+      <div class="proj reveal d1"><div class="thumb t1 has-img"><img src="img/proj-training.jpg" alt="" loading="lazy"></div><div class="body">
         <h3><span class="zh">通路與獸醫師教育</span><span class="en">Channel &amp; Veterinary Education</span></h3>
         <p><span class="zh">為 PetPark、THL 等通路夥伴、寵物店與動物醫院設計產品與營養訓練，把成分與臨床證據轉成一線可用的話術。</span><span class="en">Product and nutrition training for channel partners (PetPark, THL), retailers and veterinary hospitals — turning ingredients and clinical evidence into front-line messaging.</span></p>
         <div class="tags"><span class="tag">Vet Channel</span><span class="tag">Training</span><span class="tag">Technical Marketing</span></div>
       </div></div>
 
-      <div class="proj reveal d2"><div class="thumb t2">🎪</div><div class="body">
+      <div class="proj reveal d2"><div class="thumb t2 has-img"><img src="img/proj-expo.jpg" alt="" loading="lazy"></div><div class="body">
         <h3><span class="zh">整合行銷 campaign</span><span class="en">Integrated Brand Campaigns</span></h3>
         <p><span class="zh">年度 GTM 與 campaign 行事曆，串起寵物展活動、KOL／KOC 合作、Meta／Google／LINE 與交通媒體採買。</span><span class="en">Annual GTM and campaign calendars tying together pet expo activations, KOL/KOC programs and Meta/Google/LINE/transit media buys.</span></p>
         <div class="tags"><span class="tag">Campaign</span><span class="tag">Media</span><span class="tag">KOL</span></div>
       </div></div>
 
-      <div class="proj reveal d3"><div class="thumb t3">📈</div><div class="body">
+      <div class="proj reveal d3"><div class="thumb t3 has-img"><img src="img/proj-amazon.jpg" alt="" loading="lazy"></div><div class="body">
         <h3><span class="zh">電商與跨境成長</span><span class="en">E-commerce &amp; Cross-border Growth</span></h3>
         <p><span class="zh">台灣電商營收成長 600%；接手 Amazon 日本店讓營收翻倍並導入新品，同步操盤美國店廣告與旗艦店。</span><span class="en">600% Taiwan e-commerce growth; doubled Amazon Japan revenue and launched new SKUs; ran US store ads and storefront.</span></p>
         <div class="tags"><span class="tag">Amazon</span><span class="tag">Growth</span><span class="tag">Digital</span></div>
       </div></div>
 
-      <div class="proj reveal d1"><div class="thumb t4">💊</div><div class="body">
+      <div class="proj reveal d1"><div class="thumb t4 has-img"><img src="img/proj-sunten.jpg" alt="" loading="lazy"></div><div class="body">
         <h3><span class="zh">順天堂功能保健合作</span><span class="en">Sun Ten Functional Supplements</span></h3>
         <p><span class="zh">推動與順天堂藥廠合作，開發關節、毛髮、視力、心血管的功能性保健品，從配方邏輯到宣稱邊界一起把關。</span><span class="en">Partnered with Sun Ten Pharmaceutical on joint, coat, vision and cardiovascular supplements — from formulation logic to claim boundaries.</span></p>
         <div class="tags"><span class="tag">Pharma Partnership</span><span class="tag">Formulation</span></div>
       </div></div>
 
-      <div class="proj reveal d3"><div class="thumb t7">🧬</div><div class="body">
+      <div class="proj reveal d3"><div class="thumb t7 has-img"><img src="img/proj-postbiotic.jpg" alt="" loading="lazy"></div><div class="body">
         <h3><span class="zh">後生元功能性產品開發</span><span class="en">Postbiotic Functional Product</span></h3>
         <p><span class="zh">到職半年內主導導入臺大動科系技術移轉的後生元原料，克服既有製程造成的機能流失，把學術概念轉成飼主聽得懂的產品價值並導入通路。</span><span class="en">Within six months, led adoption of an NTU-licensed postbiotic ingredient, solved process-induced functional loss, and turned an academic concept into a product pet owners understand — then into retail.</span></p>
         <div class="tags"><span class="tag">Tech Transfer</span><span class="tag">Formulation</span><span class="tag">Launch</span></div>
@@ -595,7 +615,7 @@
         <div class="tags"><span class="tag">Compliance</span><span class="tag">QA</span></div>
       </div></div>
 
-      <div class="proj reveal d3"><div class="thumb t6">🌍</div><div class="body">
+      <div class="proj reveal d3"><div class="thumb t6 has-img"><img src="img/proj-tradeshows.jpg" alt="" loading="lazy"></div><div class="body">
         <h3><span class="zh">國際展會競品研究</span><span class="en">Global Trade-Show Research</span></h3>
         <p><span class="zh">每年走訪 Interzoo、Global Pet Expo、SuperZoo、Interpet、VIV Asia 等 6+ 展會，做競品分析、原料趨勢與供應商談判。</span><span class="en">6+ shows a year — Interzoo, Global Pet Expo, SuperZoo, Interpet, VIV Asia — for competitor analysis, ingredient trends and supplier talks.</span></p>
         <div class="tags"><span class="tag">Market Insight</span><span class="tag">Sourcing</span></div>
@@ -645,7 +665,7 @@
           <div class="lang-rows">
             <div class="lang-row"><span class="nm"><span class="zh">中文</span><span class="en">Mandarin</span></span><span class="dots"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></span></div>
             <div class="lang-row"><span class="nm"><span class="zh">英文</span><span class="en">English</span> <span style="color:var(--muted);font-weight:500;font-size:.85rem">· TOEIC 935</span></span><span class="dots"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i></span></div>
-            <div class="lang-row"><span class="nm"><span class="zh">日文</span><span class="en">Japanese</span></span><span class="dots"><i class="f"></i><i class="f"></i><i class="f"></i><i></i><i></i></span></div>
+            <div class="lang-row"><span class="nm"><span class="zh">日文</span><span class="en">Japanese</span> <span style="color:var(--muted);font-weight:500;font-size:.85rem">· JLPT N2</span></span><span class="dots"><i class="f"></i><i class="f"></i><i class="f"></i><i></i><i></i></span></div>
           </div>
         </div>
         <div class="panel reveal d2">
