@@ -27,8 +27,8 @@
     line-height:1.65;font-size:16px;letter-spacing:.01em;
     overflow-x:hidden;
   }
-  body[data-lang="en"] .zh{display:none}
-  body[data-lang="zh"] .en{display:none}
+  body[data-lang="en"] .zh{display:none!important}
+  body[data-lang="zh"] .en{display:none!important}
   body[data-lang="en"]{font-feature-settings:"liga" 1}
   a{color:inherit;text-decoration:none}
   img{max-width:100%;display:block}
@@ -302,7 +302,7 @@
   .dm-flow .fx+.fx::before{content:"→";position:absolute;left:-19px;top:50%;transform:translateY(-50%);color:var(--accent);font-weight:700;font-size:1.05rem}
   .dm-flow .fx .ic{font-size:1.5rem;margin-bottom:.35rem}
   .dm-flow .fx b{display:block;font-size:.9rem;margin-bottom:.2rem}
-  .dm-flow .fx span{font-size:.76rem;color:var(--muted);line-height:1.45;display:block}
+  .dm-flow .fx > span{font-size:.76rem;color:var(--muted);line-height:1.45;display:block}
   .dm-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}
   .dm-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
   .dm-tile{text-align:left;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:0;overflow:hidden;cursor:pointer;font-family:var(--font);color:var(--ink);transition:.25s}
