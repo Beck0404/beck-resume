@@ -239,6 +239,105 @@
     .contact-card{padding:40px 28px}
     .lang-toggle{order:-1}
   }
+
+  /* ---------- DEMO MODE（隱藏入口：網址 #demo 或連按 D 三下） ---------- */
+  #demo{position:fixed;inset:0;z-index:500;background:var(--paper);display:none;flex-direction:column;color:var(--ink)}
+  #demo.open{display:flex}
+  body.demo-open{overflow:hidden}
+  body.demo-open header{display:none}
+  .dm-top{display:flex;align-items:center;gap:12px;padding:0 22px;height:60px;border-bottom:1px solid var(--line);background:var(--white);flex-shrink:0}
+  .dm-brand{font-weight:800;display:flex;align-items:center;gap:.5rem;font-size:.95rem;white-space:nowrap}
+  .dm-brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+  .dm-brand small{font-weight:500;color:var(--muted);margin-left:.3rem}
+  .dm-count{font-family:var(--serif);color:var(--muted);font-size:.95rem;margin-left:auto;white-space:nowrap}
+  .dm-kbd{display:flex;gap:6px;color:var(--muted);font-size:.76rem;align-items:center;white-space:nowrap}
+  .dm-kbd kbd{border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:.08rem .4rem;background:var(--paper);font-family:var(--font);font-size:.72rem;color:var(--ink-soft)}
+  .dm-ic{height:36px;min-width:36px;padding:0 .7rem;border-radius:9px;border:1px solid var(--line);background:var(--white);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:.4rem;font-size:.86rem;font-weight:600;color:var(--ink-soft);transition:.2s;font-family:var(--font)}
+  .dm-ic:hover{border-color:var(--accent);color:var(--accent-deep)}
+  .dm-ic.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-deep)}
+  .dm-top .lang-toggle{margin:0}
+  .dm-body{flex:1;display:grid;grid-template-columns:262px 1fr;min-height:0}
+  .dm-side{border-right:1px solid var(--line);background:var(--paper-2);overflow-y:auto;padding:12px 10px}
+  .dm-grp{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:12px 12px 6px}
+  .dm-item{display:flex;gap:10px;align-items:flex-start;width:100%;text-align:left;border:1px solid transparent;background:none;border-radius:11px;padding:9px 12px;cursor:pointer;font-family:var(--font);color:var(--ink-soft);transition:.2s;margin-bottom:2px}
+  .dm-item:hover{background:var(--white);border-color:var(--line)}
+  .dm-item.on{background:var(--white);border-color:var(--accent);color:var(--ink);box-shadow:var(--shadow-sm)}
+  .dm-item .n{font-family:var(--serif);color:var(--accent);font-weight:600;font-size:.95rem;min-width:22px;line-height:1.4}
+  .dm-item .t{font-weight:600;font-size:.88rem;line-height:1.35}
+  .dm-item .s{display:block;font-size:.72rem;color:var(--muted);font-weight:500;margin-top:2px}
+  .dm-main{overflow-y:auto;padding:26px 36px 40px}
+  .dm-slide{max-width:1180px;margin:0 auto;animation:dmIn .35s cubic-bezier(.2,.7,.2,1)}
+  @keyframes dmIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .dm-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:20px}
+  .dm-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.1;letter-spacing:-.015em}
+  .dm-head .pitch{color:var(--ink-soft);font-size:1.05rem;margin-top:.55rem;max-width:760px}
+  .dm-badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.28rem .7rem;border-radius:999px;background:var(--accent-soft);color:var(--accent-deep);margin-bottom:.7rem;margin-right:.4rem}
+  .dm-badge.lock{background:#f3ede0;color:#7a5b22}
+  .dm-badge.none{background:var(--paper-2);color:var(--muted)}
+  .dm-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:24px;align-items:start}
+  .dm-shot{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--white);box-shadow:var(--shadow-md);aspect-ratio:16/10;display:block}
+  .dm-shot img{width:100%;height:100%;object-fit:cover;display:block}
+  .dm-shot .cap{position:absolute;left:12px;bottom:12px;font-size:.72rem;font-weight:600;background:rgba(21,23,28,.72);color:#fff;padding:.3rem .65rem;border-radius:7px;backdrop-filter:blur(6px)}
+  .dm-shot .go{position:absolute;inset:0;display:grid;place-items:center;opacity:0;transition:.25s;background:rgba(13,125,107,.16)}
+  .dm-shot:hover .go{opacity:1}
+  .dm-shot .go span{background:#fff;color:var(--accent-deep);font-weight:700;padding:.7rem 1.2rem;border-radius:11px;box-shadow:var(--shadow-md)}
+  .dm-cols{display:grid;gap:12px}
+  .dm-col{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:15px 18px}
+  .dm-col h4{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.45rem;display:flex;align-items:center;gap:.5rem}
+  .dm-col ul{list-style:none;padding:0;margin:0}
+  .dm-col li{position:relative;padding-left:1rem;font-size:.92rem;color:var(--ink-soft);margin-bottom:.3rem;line-height:1.5}
+  .dm-col li::before{content:"›";position:absolute;left:0;color:var(--accent);font-weight:700}
+  .dm-tech{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:16px}
+  .dm-notes{margin-top:22px;background:#fff8e6;border:1px dashed #d9b86a;border-radius:var(--r);padding:14px 20px;display:none}
+  #demo.notes .dm-notes{display:block}
+  .dm-notes h4{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:#7a5b22;margin-bottom:.45rem}
+  .dm-notes ul{margin:0;padding-left:1.1rem}
+  .dm-notes li{font-size:.92rem;color:var(--ink-soft);margin-bottom:.25rem}
+  .dm-nav{display:flex;justify-content:space-between;margin-top:28px;gap:12px}
+  /* 總覽 / 流水線 圖示 */
+  .dm-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:22px;margin:4px 0 22px}
+  .dm-flow .fx{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:16px 12px;position:relative;text-align:center}
+  .dm-flow .fx+.fx::before{content:"→";position:absolute;left:-19px;top:50%;transform:translateY(-50%);color:var(--accent);font-weight:700;font-size:1.05rem}
+  .dm-flow .fx .ic{font-size:1.5rem;margin-bottom:.35rem}
+  .dm-flow .fx b{display:block;font-size:.9rem;margin-bottom:.2rem}
+  .dm-flow .fx span{font-size:.76rem;color:var(--muted);line-height:1.45;display:block}
+  .dm-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}
+  .dm-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .dm-tile{text-align:left;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:0;overflow:hidden;cursor:pointer;font-family:var(--font);color:var(--ink);transition:.25s}
+  .dm-tile:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--accent-soft)}
+  .dm-tile .im{aspect-ratio:16/10;background:var(--paper-2);overflow:hidden}
+  .dm-tile .im img{width:100%;height:100%;object-fit:cover;display:block}
+  .dm-tile .im.ph{display:grid;place-items:center;font-size:1.8rem;background:linear-gradient(135deg,var(--accent),var(--accent-deep))}
+  .dm-tile .tx{padding:10px 12px 12px}
+  .dm-tile b{display:block;font-size:.88rem;line-height:1.3}
+  .dm-tile span{font-size:.72rem;color:var(--muted)}
+  .dm-tl{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow-md)}
+  .dm-tl .row{display:grid;grid-template-columns:78px 1fr;gap:14px;padding:11px 0;border-bottom:1px dashed var(--line);align-items:start}
+  .dm-tl .row:last-child{border-bottom:0}
+  .dm-tl .tm{font-family:var(--serif);font-weight:600;color:var(--accent-deep);font-size:1.05rem}
+  .dm-tl .tm small{display:block;font-family:var(--font);font-weight:500;color:var(--muted);font-size:.7rem}
+  .dm-tl b{display:block;font-size:.92rem}
+  .dm-tl p{font-size:.85rem;color:var(--muted);margin:0}
+  .dm-tl .chain{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+  .dm-tl .chain i{font-style:normal;font-size:.76rem;font-weight:600;padding:.2rem .55rem;border-radius:7px;background:var(--accent-soft);color:var(--accent-deep)}
+  @media(max-width:900px){
+    .dm-body{grid-template-columns:1fr;grid-template-rows:auto 1fr}
+    .dm-side{display:flex;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line);padding:8px}
+    .dm-grp{display:none}
+    .dm-item{flex:0 0 auto;padding:8px 10px}
+    .dm-item .s{display:none}
+    .dm-grid{grid-template-columns:1fr}
+    .dm-main{padding:18px}
+    .dm-flow{grid-template-columns:1fr 1fr}
+    .dm-flow .fx+.fx::before{display:none}
+    .dm-stats,.dm-tiles{grid-template-columns:1fr 1fr}
+    .dm-kbd,.dm-count{display:none}
+    .dm-top{gap:8px;padding:0 12px}
+    .dm-brand small{display:none}
+    .dm-top .lang-toggle{flex-shrink:0;margin-left:auto}
+    .dm-ic{padding:0 .5rem}
+    #dmNotes .zh,#dmNotes .en{display:none}
+  }
 </style>
 </head>
 <body data-lang="zh">
@@ -541,6 +640,24 @@
   </div>
 </footer>
 
+
+<!-- DEMO MODE（面試現場作品集投影介面；隱藏入口：網址加 #demo，或連按 D 三下；Esc 離開） -->
+<div id="demo" aria-hidden="true">
+  <div class="dm-top">
+    <div class="dm-brand"><span class="dot"></span><span class="zh">范鈞豪</span><span class="en">Chun-Hao Fan</span><small><span class="zh">· 作品集 Demo</span><span class="en">· Portfolio Demo</span></small></div>
+    <div class="dm-count" id="dmCount"></div>
+    <div class="dm-kbd"><kbd>←</kbd><kbd>→</kbd><span class="zh">切換</span><span class="en">navigate</span> <kbd>N</kbd><span class="zh">備忘</span><span class="en">notes</span> <kbd>O</kbd><span class="zh">開實站</span><span class="en">open</span> <kbd>Esc</kbd><span class="zh">離開</span><span class="en">exit</span></div>
+    <div class="lang-toggle" role="group" aria-label="language"><button data-set="zh" class="on">中</button><button data-set="en">EN</button></div>
+    <button class="dm-ic" id="dmNotes" title="講者備忘 (N)">📝 <span class="zh">備忘</span><span class="en">Notes</span></button>
+    <button class="dm-ic" id="dmFull" title="全螢幕 (F)">⛶</button>
+    <button class="dm-ic" id="dmClose" title="離開 (Esc)">✕</button>
+  </div>
+  <div class="dm-body">
+    <aside class="dm-side" id="dmSide"></aside>
+    <main class="dm-main" id="dmMain"></main>
+  </div>
+</div>
+
 <script>
 (function(){
   var body=document.body;
@@ -616,6 +733,204 @@
     secs.forEach(function(s){ if(y>=s.offsetTop)cur=s.id; });
     navA.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+cur)});
   });
+
+  /* ================= DEMO MODE ================= */
+  // 入口：網址 #demo，或 1 秒內連按 D 三下。內容資料在 DEMO 陣列；[中文, English] 成對。
+  var IMG='img/demo/';
+  var DEMO=[
+    {key:'overview',kind:'overview',
+     title:['一個人的產品部數位工具鏈','A one-person product-ops toolchain'],
+     sub:['總覽 · 8 個站 + 1 條流水線','Overview · 8 sites + 1 pipeline'],
+     pitch:['產品研發部沒有工程師。我把 Claude 當共同開發者，把每天重複的資料整理、進度追蹤、法規查證做成 8 個網站和 1 條每天自動跑的流水線，全部跑在免費方案上。',
+            'The product team has no engineers. Using Claude as a co-developer, I turned the daily grind of data wrangling, progress tracking and regulatory look-ups into 8 web tools and 1 daily pipeline — all on free tiers.'],
+     flow:[
+       ['📊',['Excel 主檔','Excel masters'],['OneDrive 共用資料夾；同事照常編輯','Shared OneDrive; colleagues edit as usual']],
+       ['🐍',['Python + Claude skills','Python + Claude skills'],['review-first：先出比對表、核可才寫回','Review-first: propose, approve, then write back']],
+       ['🐙',['GitHub','GitHub'],['每站一個私有 repo，push 即部署','One private repo per site; push to deploy']],
+       ['☁️',['Cloudflare Workers','Cloudflare Workers'],['靜態資產 + 密碼門；免費額度','Static assets + password gate; free tier']],
+       ['👥',['同事 / 消費者','Colleagues / consumers'],['一個網址，永遠最新版','One URL, always current']]
+     ],
+     stats:[['8',['上線網站','live sites']],['16:00',['每日自動流水線','daily pipeline']],['9',['市場的產品資料','markets covered']],['1,000+',['SKU 一站查','SKUs searchable']]],
+     notes:['開場 30 秒：我不是工程師；這些工具是「產品經理用 AI 把自己的流程做成系統」。','三個原則：不碰主檔（外科手術式寫入）、review-first（機器建議、人核可）、不刪檔不自動送出。','接著挑 2～3 個站開實站示範，其餘用卡片帶過。']},
+
+    {key:'herz-quality',url:'https://herz-quality.beck810404.workers.dev',pub:true,img:'herz-quality.jpg',
+     title:['赫緻品質溯源查詢站','Herz Quality Traceability Site'],
+     sub:['公開 · 五語系 · 每日更新','Public · 5 languages · daily'],
+     pitch:['消費者與經銷商選產品、選效期，就能看到該批次的內檢、外檢與第三方檢驗報告。','Consumers and distributors pick a product and a lot date to see in-house, external and third-party test reports for that batch.'],
+     problem:[['檢驗報告散在品保的 Excel 與 PDF 裡，業務被問到只能一份份翻找。','Test reports lived in QA spreadsheets and PDFs; sales dug them out one by one.'],['海外經銷商需要多語版本與可分享的連結。','Overseas distributors needed multilingual, shareable proof.']],
+     approach:[['品保只維護一份 Excel，腳本自動生成靜態網站；PDF 不上線，轉成預覽圖用燈箱看。','QA maintains one Excel; a script builds the static site. PDFs never go live — they become preview images.'],['繁中／英／日／韓／越五語系。','Five languages: zh-Hant, EN, JA, KO, VI.'],['不合格／陽性批次自動擋下待確認，同產品其他批次照常上線。','Failed or positive lots are held for review automatically; other lots publish as usual.']],
+     result:[['掛在每日 16:00 流水線，公開站每天自動更新。','Runs in the daily 16:00 pipeline; the public site updates itself.'],['上線前異常自動掃描，無人值守也不會把陽性批次放上公開網站。','Pre-publish anomaly scan — unattended runs never expose a positive lot.']],
+     tech:['Python','Static HTML','PyMuPDF','Cloudflare Workers','GitHub','Task Scheduler'],
+     notes:['示範：切語言 → 選產品 → 選效期 → 看報告燈箱。','重點講「不合格閘門」：公開站 + 無人值守，所以寧可擋下等人確認。','這是唯一對消費者公開的站，其餘是內部工具。']},
+
+    {key:'product-kanban',url:'https://product-kanban.beck810404.workers.dev',pub:false,img:'product-kanban.jpg',
+     title:['新品進度追蹤看板','New-Product Pipeline Kanban'],
+     sub:['內部 · 三來源自動同步','Internal · auto-synced from 3 sources'],
+     pitch:['從品號建立到上市結案，數百個進行中品號的階段與卡關原因一眼看完，資料每天自動同步。','From SKU creation to launch, hundreds of in-flight SKUs and their blockers on one board — synced daily.'],
+     problem:[['進度散在 Outlook 品號信、設計需求單 pptx、越南訂單 Excel 三個地方。','Status was scattered across Outlook threads, design-request decks and order spreadsheets.'],['人手更新追蹤表永遠落後，會議一半時間在對版本。','Manual tracking lagged; meetings were spent reconciling versions.']],
+     approach:[['一支同步流程讀三個來源 → 產出「比對」分頁 → 我核可 → 才寫回主表（外科手術式寫入，不破壞 Excel 結構）。','One sync job reads all three sources, produces a review sheet, and writes back only after approval — surgically, without breaking the workbook.'],['主表重生為單檔 Kanban，push 後自動部署，同事只要開網址。','The master regenerates into a single-file Kanban; push to deploy.']],
+     result:[['每日 16:00 自動跑；BLOCKED 欄集中所有卡關原因。','Runs daily at 16:00; a BLOCKED lane concentrates every blocker.'],['變更紀錄可追溯：誰、何時、哪個欄位從什麼變成什麼。','Traceable change log: who, when, which field, from what to what.']],
+     tech:['Python','Outlook COM','openpyxl','Kanban HTML/JS','Cloudflare 密碼門'],
+     notes:['示範：搜一個品號 → 展開卡 → 看變更紀錄；再看 BLOCKED 欄。','講 review-first：機器只提建議，人核可，才動主檔。','順帶提每天 16:00 前要關主檔的紀律，說明對資料完整性的敬畏。']},
+
+    {key:'product-info-dashboard',url:'https://product-info-dashboard.beck810404.workers.dev',pub:false,img:'product-info-dashboard.jpg',
+     title:['產品資訊儀表板','Product Information Dashboard'],
+     sub:['內部 · 1,000+ SKU · 9 市場','Internal · 1,000+ SKUs · 9 markets'],
+     pitch:['1,000 多個 SKU、9 個市場的成分、營養、包裝規格與訂單狀態，一個網址查完、篩完、匯出。','Ingredients, nutrition, packaging specs and order status for 1,000+ SKUs across 9 markets — search, filter, export from one URL.'],
+     problem:[['產品資訊表上千列，每個部門要的欄位不同，業務常拿到過期版本。','A thousand-row master sheet; every team needs different columns; sales kept using stale copies.'],['餵食建議、進口商標示、訂單狀態各在不同檔案。','Feeding guides, importer labels and order status lived in separate files.']],
+     approach:[['每天從主檔重生單一 HTML：複選篩選、AND／OR 搜尋語意、依市場自動計算餵食建議表。','Regenerated daily into one HTML file: multi-select filters, AND/OR search semantics, per-market feeding tables.'],['越南訂單標籤以物流甘特圖為準、訂單 Excel 輔助；純前端產出真正的 .xlsx 匯出。','Order tags follow the logistics Gantt as source of truth; pure front-end .xlsx export.'],['客戶型錄版另外輸出，不含內部欄位。','A separate customer-catalog build strips internal fields.']],
+     result:[['每日自動更新；「資料健檢」分頁把上游三份 Excel 的不一致抓出來。','Updates daily; a data-health tab surfaces inconsistencies across the three upstream sheets.'],['同一份資料源，多個出口：儀表板、型錄、校稿 QA 資料包。','One source, many outputs: dashboard, catalog, QA data pack for label proofing.']],
+     tech:['Python','Single-file HTML/JS','NAS 圖庫','Google Apps Script','Cloudflare 密碼門'],
+     notes:['示範：篩市場＋品牌 → 開一張詳情卡（餵食表、包裝規格、訂單標籤）→ 匯出 Excel。','講「同一份資料源、多個出口」與「資料健檢」：工具反過來幫上游把資料清乾淨。']},
+
+    {key:'channel-cost-calculator',url:'https://channel-cost-calculator.beck810404.workers.dev',pub:false,img:'channel-cost-calculator.jpg',
+     title:['通路成本結構試算','Channel Cost Calculator'],
+     sub:['內部 · 5 通路 × 2 產地','Internal · 5 channels × 2 origins'],
+     pitch:['越南／台灣製造 × 美國 Amazon、Chewy、日本 Amazon、樂天、台灣經銷：成本瀑布與反推售價，定價會議現場改數字即時看。','Vietnam/Taiwan origin × Amazon US, Chewy, Amazon JP, Rakuten, Taiwan distribution: cost waterfall and reverse pricing, live in the pricing meeting.'],
+     problem:[['每次定價都要重開 Excel 從 FOB 一路算到通路淨利；關稅或平台費率一改就全錯。','Every pricing exercise rebuilt the FOB-to-net-margin sheet; one tariff change broke everything.']],
+     approach:[['費率與關稅內嵌成可覆蓋的預設值，每項標來源與查證日期。','Rates and tariffs are embedded as overridable defaults, each with source and verification date.'],['雙向試算：填售價看毛利，或填目標毛利反推建議售價；日亞手数料自動分級、台灣三層價格鏈。','Two-way: price → margin, or target margin → suggested price; Amazon JP fee tiers and Taiwan three-tier chain built in.'],['情境可另存比較。','Scenarios saved for side-by-side comparison.']],
+     result:[['「更新費率」一句話：Claude 上網查證各平台費率與關稅後更版。','"Update rates" in one sentence: Claude re-verifies platform fees and tariffs, then ships the update.'],['假設透明，討論從「數字對不對」變成「假設合不合理」。','Transparent assumptions move debate from "is the number right" to "is the assumption right".']],
+     tech:['Single-file HTML/JS','localStorage','Cloudflare 密碼門'],
+     notes:['示範：切產地看關稅變 → 切試算方向（目標毛利反推）→ 看達標售價與 FOB 上限。','強調「假設透明」：頁尾附錄有每個費率的來源與日期。']},
+
+    {key:'pet-food-regulations',url:'https://pet-food-regulations.beck810404.workers.dev',pub:false,img:'pet-food-regulations.jpg',
+     title:['寵物食品法規彙整站','Pet Food Regulations Index'],
+     sub:['內部 · 台／美／日','Internal · TW / US / JP'],
+     pitch:['三個市場的原料限制、宣稱紅線、標示規範與 Amazon 政策，做成可搜尋的索引；每張卡掛官方來源與查證日期。','Ingredient limits, claim red lines, labeling rules and Amazon policy for three markets as a searchable index — every card linked to its official source and verification date.'],
+     problem:[['法規散在多份內部筆記；查一個原料能不能用要翻好幾個網站，而且不知道筆記還新不新。','Rules lived in scattered notes; checking one ingredient meant several sites, with no idea how stale the notes were.']],
+     approach:[['卡片式資料：市場／風險等級／官方連結／查證日期；跨市場紅字字典；原料 A／B／C 分級。','Card data model: market, risk level, official link, verified date; a cross-market red-word dictionary; A/B/C ingredient tiers.'],['超過 6 個月未查證自動出黃色提醒。','Cards unverified for 6+ months trigger a yellow banner.'],['「更新法規網站」：Claude 逐卡查官方來源再更版。','"Update the regulations site": Claude re-checks each card against official sources.']],
+     result:[['新品提案與包裝校稿的第一站；與合規檢查流程共用同一套 reference。','First stop for new-product proposals and label proofing; shares its references with the compliance-check workflow.']],
+     tech:['Single-file HTML/JS','Embedded data','Cloudflare 密碼門'],
+     notes:['示範：搜一個字眼（例如 hypoallergenic 或「療效」）→ 看三市場差異與官方連結。','講「索引不是裁決」：每卡導向官方來源，送件前一定點過去。']},
+
+    {key:'design-request-form',url:'https://design-request-form.beck810404.workers.dev',pub:true,img:'design-request-form.jpg',
+     title:['產品設計需求單 Web 表單','Design Request Web Form'],
+     sub:['公開連結 · 瀏覽器直接產 pptx','Public link · generates pptx in-browser'],
+     pitch:['同事填一張網頁表單，瀏覽器直接產出標準 A1 設計需求單 pptx；存進共用資料夾後自動寄信並登記。','Colleagues fill one web form; the browser generates a standard A1 design-request deck. Saving it triggers email and registration automatically.'],
+     problem:[['需求單靠口頭與各自的 pptx 版本：欄位漏填、交期各算各的、沒人登記。','Requests were verbal or ad-hoc decks: missing fields, inconsistent lead times, no registry.']],
+     approach:[['品牌、包材、校稿角色等清單內嵌表單；PptxGenJS 在瀏覽器產出固定版式（含共用袋刀模圖）。','Brand, packaging and sign-off lists are embedded; PptxGenJS renders a fixed layout, die-cut drawings included.'],['交期以工作天＋台灣國定假日推算。','Lead times computed in working days with Taiwan public holidays.'],['存進 OneDrive → Power Automate 寄信＋寫入登記表；每日腳本補齊漏登與空欄。','Save to OneDrive → Power Automate emails and registers; a daily script back-fills gaps.']],
+     result:[['設計發案標準化；登記表成為交期績效的資料來源。','Standardized design briefs; the registry feeds the lead-time dashboard.']],
+     tech:['HTML/JS','PptxGenJS','Power Automate','Python 每日對帳','Cloudflare Workers'],
+     notes:['示範：填幾格 → 下載 pptx → 打開看版式與刀模頁。','講「把流程規則寫進工具，而不是寫在公告裡」。']},
+
+    {key:'design-perf-dashboard',url:'https://design-perf-dashboard.beck810404.workers.dev',pub:false,img:'design-perf-dashboard.jpg',
+     title:['設計交期績效儀表板','Design Lead-Time Dashboard'],
+     sub:['內部版 · 同一份程式產兩版','Internal · two builds, one codebase'],
+     pitch:['從需求登記表算出準時率、平均延遲與工作量分佈；內部版另有設計師維度。','On-time rate, average delay and workload from the request registry; the internal build adds a per-designer view.'],
+     problem:[['設計交期沒有客觀數據，檢討只能憑印象。','No objective lead-time data; reviews ran on impressions.']],
+     approach:[['讀登記表 → 生成儀表板；共用版與內部版由同一支程式產出。','Registry → dashboard; shared and internal builds come from one script.'],['內部版才含設計師 KPI，建置時整段剪掉而不是前端隱藏，原始碼也看不到。','Designer KPIs exist only in the internal build — stripped at build time, not hidden in the DOM.'],['只寫數字、不下評語。','Numbers only, no editorial judgement.']],
+     result:[['共用版放部門共用資料夾，內部版走密碼門；資料來源與更新排程同一套。','Shared build lives in the team folder; internal build sits behind a password gate; same data and schedule.']],
+     tech:['Python build','Single-file HTML','Cloudflare 密碼門'],
+     notes:['示範：準時率卡 → 分組表現。','講「同一資料兩種可見性」與中性敘述：共看報表不下評語。']},
+
+    {key:'pipeline',kind:'pipeline',pub:null,
+     title:['每日自動化流水線','The Daily Automation Pipeline'],
+     sub:['無網址 · 每天 16:00 自動跑','No URL · runs daily at 16:00'],
+     pitch:['一支排程串起同步、看板、品質站、儀表板：每天 16:00 讀主檔、重生、推上線。工具越多，手動更新反而越少。','One schedule chains sync, Kanban, quality site and dashboard: read the masters, regenerate, publish — every day at 16:00. More tools, less manual work.'],
+     timeline:[
+       [['07:30',['排程','sched']],['產品資訊表狀態推導','Derive product status'],['追蹤表 → 狀態欄；只前進不後退，品號×國家雙鍵。','Tracking sheet → status column; forward-only, keyed by SKU × market.'],[]],
+       [['09:04',['平日','weekdays']],['物流甘特圖快照','Logistics Gantt snapshot'],['直接呼叫 Google Apps Script RPC 取全市場出貨資料，寫成 gantt.json。','Calls the Google Apps Script RPC directly for all-market shipments → gantt.json.'],[]],
+       [['16:00',['主流程','main']],['ProductPipeline-Daily','ProductPipeline-Daily'],['依序執行，任何一步可單獨重跑（--only／--from／--dry-run）。主檔一律外科手術式寫入並以部件數驗收。','Runs in order; any step can be rerun alone (--only / --from / --dry-run). Masters are written surgically and verified by part count.'],['sync','kanban','quality','dashboard']],
+       [['17:35',['排程','sched']],['設計需求登記表對帳','Design registry reconciliation'],['補登漏接檔案、補空欄、標記已消失的檔；Excel 開著就跳過隔天再補。','Back-fills missed files and empty cells, flags vanished files; skips if Excel is open.'],[]]
+     ],
+     result:[['8 個站、1 個入口；每天同一時間更新，沒跑到會在下次登入補跑。','8 sites, one entry point; same time every day, catches up on next login if missed.'],['跑完寫一份「待處理」摘要：有事才通知我，沒事就寫「目前沒有待處理事項」。','Ends with a to-do digest: pings me only when something needs a decision.']],
+     tech:['Python','Windows Task Scheduler','git','Cloudflare Workers Builds','Claude skills'],
+     notes:['收尾：這一切沒有工程師，靠 Claude 共同開發＋明確的安全規則（不刪檔、不自動送出、review-first）。','如果被問「AI 會不會亂改資料」：答外科手術式寫入＋部件數驗收＋比對分頁核可。']}
+  ];
+
+  var dm=document.getElementById('demo'), dmSide=document.getElementById('dmSide'), dmMain=document.getElementById('dmMain'), dmCount=document.getElementById('dmCount');
+  var dmIdx=0, dmOpen=false;
+  function L(p){return '<span class="zh">'+p[0]+'</span><span class="en">'+p[1]+'</span>';}
+  function badge(p){
+    if(p.pub===true)return '<span class="dm-badge">🌐 '+L(['公開網站','Public'])+'</span>';
+    if(p.pub===false)return '<span class="dm-badge lock">🔒 '+L(['內部工具 · 密碼門','Internal · password gate'])+'</span>';
+    if(p.kind==='pipeline')return '<span class="dm-badge none">⏱ '+L(['背景排程 · 無網址','Background job · no URL'])+'</span>';
+    return '';
+  }
+  function col(icon,head,items){
+    return '<div class="dm-col"><h4>'+icon+' '+L(head)+'</h4><ul>'+items.map(function(i){return '<li>'+L(i)+'</li>'}).join('')+'</ul></div>';
+  }
+  function techChips(t){return t?'<div class="dm-tech">'+t.map(function(x){return '<span class="tag">'+x+'</span>'}).join('')+'</div>':'';}
+  function notesBox(n){return '<div class="dm-notes"><h4>📝 '+L(['講者備忘（投影時按 N 收起）','Speaker notes (press N to hide)'])+'</h4><ul>'+n.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div>';}
+  function openBtn(p){return p.url?'<a class="btn btn-primary" href="'+p.url+'" target="_blank" rel="noopener">↗ '+L(['開啟實站','Open live site'])+'</a>':'';}
+  function navBtns(){
+    return '<div class="dm-nav"><button class="btn btn-ghost" data-go="-1">← '+L(['上一個','Previous'])+'</button><button class="btn btn-ghost" data-go="1">'+L(['下一個','Next'])+' →</button></div>';
+  }
+  function renderSide(){
+    var h='<div class="dm-grp">'+L(['作品集','Portfolio'])+'</div>';
+    DEMO.forEach(function(p,i){
+      h+='<button class="dm-item'+(i===dmIdx?' on':'')+'" data-i="'+i+'"><span class="n">'+(i===0?'◎':String(i).padStart(2,'0'))+'</span><span><span class="t">'+L(p.title)+'</span><span class="s">'+L(p.sub)+'</span></span></button>';
+    });
+    dmSide.innerHTML=h;
+  }
+  function renderMain(){
+    var p=DEMO[dmIdx], h='<div class="dm-slide">';
+    h+='<div class="dm-head"><div>'+badge(p)+'<h2>'+L(p.title)+'</h2><p class="pitch">'+L(p.pitch)+'</p></div><div>'+openBtn(p)+'</div></div>';
+    if(p.kind==='overview'){
+      h+='<div class="dm-flow">'+p.flow.map(function(f){return '<div class="fx"><div class="ic">'+f[0]+'</div><b>'+L(f[1])+'</b><span>'+L(f[2])+'</span></div>'}).join('')+'</div>';
+      h+='<div class="dm-stats">'+p.stats.map(function(s){return '<div class="stat"><div class="n">'+s[0]+'</div><div class="l">'+L(s[1])+'</div></div>'}).join('')+'</div>';
+      h+='<div class="dm-tiles">'+DEMO.slice(1).map(function(q,i){
+        var im=q.img?'<div class="im"><img src="'+IMG+q.img+'" alt=""></div>':'<div class="im ph">⏱</div>';
+        return '<button class="dm-tile" data-i="'+(i+1)+'">'+im+'<div class="tx"><b>'+L(q.title)+'</b><span>'+L(q.sub)+'</span></div></button>';
+      }).join('')+'</div>';
+    }else if(p.kind==='pipeline'){
+      h+='<div class="dm-grid"><div class="dm-tl">'+p.timeline.map(function(r){
+        var chain=r[3].length?'<div class="chain">'+r[3].map(function(c,i){return (i?'<i style="background:none;color:var(--accent);padding:0">→</i>':'')+'<i>'+c+'</i>'}).join('')+'</div>':'';
+        return '<div class="row"><div class="tm">'+r[0][0]+'<small>'+L(r[0][1])+'</small></div><div><b>'+L(r[1])+'</b><p>'+L(r[2])+'</p>'+chain+'</div></div>';
+      }).join('')+'</div><div class="dm-cols">'+col('✅',['成果','Result'],p.result)+techChips(p.tech)+'</div></div>';
+    }else{
+      var shot=p.url?'<a class="dm-shot" href="'+p.url+'" target="_blank" rel="noopener">':'<div class="dm-shot">';
+      shot+='<img src="'+IMG+p.img+'" alt=""><span class="cap">'+L(['截圖已模糊處理 · 點擊開實站','Blurred screenshot · click to open live'])+'</span><div class="go"><span>↗ '+L(['開啟實站','Open live site'])+'</span></div>';
+      shot+=p.url?'</a>':'</div>';
+      h+='<div class="dm-grid"><div>'+shot+techChips(p.tech)+'</div><div class="dm-cols">'+col('❓',['問題','Problem'],p.problem)+col('🛠',['做法','Approach'],p.approach)+col('✅',['成果','Result'],p.result)+'</div></div>';
+    }
+    h+=notesBox(p.notes)+navBtns()+'</div>';
+    dmMain.innerHTML=h; dmMain.scrollTop=0;
+    dmCount.textContent=(dmIdx+1)+' / '+DEMO.length;
+    renderSide();
+  }
+  function dmGo(i){ dmIdx=(i+DEMO.length)%DEMO.length; renderMain(); }
+  function openDemo(){
+    if(dmOpen)return; dmOpen=true;
+    dm.classList.add('open'); dm.setAttribute('aria-hidden','false'); body.classList.add('demo-open');
+    if(location.hash!=='#demo')history.replaceState(null,'',location.pathname+location.search+'#demo');
+    DEMO.forEach(function(p){ if(p.img){var im=new Image(); im.src=IMG+p.img;} });
+    renderMain();
+  }
+  function closeDemo(){
+    if(!dmOpen)return; dmOpen=false;
+    dm.classList.remove('open'); dm.setAttribute('aria-hidden','true'); body.classList.remove('demo-open');
+    if(location.hash==='#demo')history.replaceState(null,'',location.pathname+location.search);
+    if(document.fullscreenElement&&document.exitFullscreen)document.exitFullscreen();
+  }
+  dmSide.addEventListener('click',function(e){var b=e.target.closest('[data-i]'); if(b)dmGo(+b.dataset.i);});
+  dmMain.addEventListener('click',function(e){
+    var t=e.target.closest('[data-i]'); if(t){dmGo(+t.dataset.i);return;}
+    var g=e.target.closest('[data-go]'); if(g)dmGo(dmIdx+(+g.dataset.go));
+  });
+  document.getElementById('dmClose').addEventListener('click',closeDemo);
+  document.getElementById('dmNotes').addEventListener('click',function(){dm.classList.toggle('notes');this.classList.toggle('on',dm.classList.contains('notes'));});
+  document.getElementById('dmFull').addEventListener('click',function(){
+    if(document.fullscreenElement){document.exitFullscreen&&document.exitFullscreen();}
+    else if(dm.requestFullscreen){dm.requestFullscreen();}
+  });
+  var dTaps=[];
+  document.addEventListener('keydown',function(e){
+    var tag=(e.target.tagName||'').toLowerCase(); if(tag==='input'||tag==='textarea')return;
+    if(!dmOpen){
+      if(e.key==='d'||e.key==='D'){var now=Date.now(); dTaps=dTaps.filter(function(t){return now-t<1000}); dTaps.push(now); if(dTaps.length>=3){dTaps=[];openDemo();}}
+      return;
+    }
+    if(e.key==='Escape')closeDemo();
+    else if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();dmGo(dmIdx+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();dmGo(dmIdx-1);}
+    else if(e.key==='Home')dmGo(0);
+    else if(e.key==='n'||e.key==='N')document.getElementById('dmNotes').click();
+    else if(e.key==='f'||e.key==='F')document.getElementById('dmFull').click();
+    else if((e.key==='o'||e.key==='O')&&DEMO[dmIdx].url)window.open(DEMO[dmIdx].url,'_blank','noopener');
+  });
+  window.addEventListener('hashchange',function(){ if(location.hash==='#demo')openDemo(); else closeDemo(); });
+  if(location.hash==='#demo')openDemo();
 })();
 </script>
 </body>
