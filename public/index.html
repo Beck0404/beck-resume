@@ -184,6 +184,12 @@
   .skillbar .top span:last-child{color:var(--muted);font-weight:500}
   .track{height:8px;background:var(--paper-2);border-radius:99px;overflow:hidden}
   .fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-deep));border-radius:99px;width:0;transition:width 1.3s cubic-bezier(.2,.8,.2,1)}
+  .caps{display:flex;flex-direction:column}
+  .cap{display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed var(--line)}
+  .cap:first-child{padding-top:0}.cap:last-child{border-bottom:0;padding-bottom:0}
+  .cap .k{width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:.55rem;flex-shrink:0;box-shadow:0 0 0 4px var(--accent-soft)}
+  .cap b{display:block;font-size:.96rem;line-height:1.4}
+  .cap p{font-size:.88rem;color:var(--muted);margin:.2rem 0 0;line-height:1.55}
   .chips{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.6rem}
   .chip{font-size:.86rem;font-weight:500;padding:.5rem .95rem;background:var(--paper);border:1px solid var(--line);border-radius:10px;transition:.2s}
   .chip:hover{border-color:var(--accent);color:var(--accent-deep);transform:translateY(-2px)}
@@ -587,17 +593,20 @@
       <div>
         <div class="panel reveal" style="margin-bottom:24px">
           <h3><span class="ic">⚙️</span><span class="zh">核心能力</span><span class="en">Core Strengths</span></h3>
-          <div class="skillbar"><div class="top"><span><span class="zh">獸醫專業與技術溝通</span><span class="en">Veterinary Expertise & Technical Communication</span></span><span>95%</span></div><div class="track"><div class="fill" data-w="95"></div></div></div>
-          <div class="skillbar"><div class="top"><span><span class="zh">品牌計畫與 campaign 執行</span><span class="en">Brand Planning & Campaign Execution</span></span><span>92%</span></div><div class="track"><div class="fill" data-w="92"></div></div></div>
-          <div class="skillbar"><div class="top"><span><span class="zh">市場情報與競品分析</span><span class="en">Market Intelligence & Competitor Analysis</span></span><span>92%</span></div><div class="track"><div class="fill" data-w="92"></div></div></div>
-          <div class="skillbar"><div class="top"><span><span class="zh">跨部門協調與專案管理</span><span class="en">Cross-functional & Project Mgmt</span></span><span>92%</span></div><div class="track"><div class="fill" data-w="92"></div></div></div>
-          <div class="skillbar"><div class="top"><span><span class="zh">數位媒體與電商營運</span><span class="en">Digital Media & E-commerce</span></span><span>88%</span></div><div class="track"><div class="fill" data-w="88"></div></div></div>
-          <div class="skillbar" style="margin-bottom:0"><div class="top"><span><span class="zh">法規與宣稱合規（TW · US · JP）</span><span class="en">Regulatory & Claims (TW · US · JP)</span></span><span>88%</span></div><div class="track"><div class="fill" data-w="88"></div></div></div>
+          <div class="caps">
+            <div class="cap"><span class="k"></span><div><b><span class="zh">獸醫專業與技術溝通</span><span class="en">Veterinary Expertise & Technical Communication</span></b><p><span class="zh">執照獸醫、台大臨床獸醫碩士。為 Farmina、Dr. Clauder's 與再生醫學療法做動物醫院與寵物店教育，把實驗數據講成診間與貨架都聽得懂的話。</span><span class="en">Licensed DVM, MSc NTU. Trained veterinary hospitals and retailers for Farmina, Dr. Clauder's and regenerative therapies — turning lab data into clinic- and shelf-ready messaging.</span></p></div></div>
+            <div class="cap"><span class="k"></span><div><b><span class="zh">品牌計畫與 campaign 執行</span><span class="en">Brand Planning & Campaign Execution</span></b><p><span class="zh">制定多品牌年度 GTM 與 campaign 行事曆；寵物展、KOL／KOC、Meta／Google／LINE 與交通媒體採買；台灣電商營收成長 600%。</span><span class="en">Annual GTM plans and campaign calendars across brands; pet expos, KOL/KOC, Meta/Google/LINE and transit media; 600% Taiwan e-commerce growth.</span></p></div></div>
+            <div class="cap"><span class="k"></span><div><b><span class="zh">市場情報與競品分析</span><span class="en">Market Intelligence & Competitor Analysis</span></b><p><span class="zh">每年走 6+ 場國際展會（Interzoo、Global Pet Expo、SuperZoo、Interpet、VIV Asia）；把新品提案標準化成競品格局、定位象限、三階定價的固定框架。</span><span class="en">6+ international shows a year (Interzoo, Global Pet Expo, SuperZoo, Interpet, VIV Asia); standardized proposals into a fixed framework — landscape, positioning map, three-tier pricing.</span></p></div></div>
+            <div class="cap"><span class="k"></span><div><b><span class="zh">跨部門協調與專案管理</span><span class="en">Cross-functional & Project Management</span></b><p><span class="zh">PMP · CSM · CSPO。從零重建 8 人團隊，100+ SKU 準時上市；用設計需求單流程與進度看板讓六個部門看同一份進度。</span><span class="en">PMP · CSM · CSPO. Rebuilt an 8-person team from zero and shipped 100+ SKUs on time; design-request workflow and a live Kanban keep six departments on one view of progress.</span></p></div></div>
+            <div class="cap"><span class="k"></span><div><b><span class="zh">數位媒體與電商營運</span><span class="en">Digital Media & E-commerce</span></b><p><span class="zh">Amazon 日本店營收翻倍並導入新品、操盤美國店廣告；momo／PChome／91APP 台灣電商；Amazon Sponsored Ads Advanced 認證。</span><span class="en">Doubled Amazon Japan revenue and launched new SKUs; ran US store advertising; momo / PChome / 91APP in Taiwan; Amazon Sponsored Ads Advanced certified.</span></p></div></div>
+            <div class="cap"><span class="k"></span><div><b><span class="zh">法規與宣稱合規（TW · US · JP）</span><span class="en">Regulatory & Claims (TW · US · JP)</span></b><p><span class="zh">配方、包裝與宣稱對齊台灣食安法、AAFCO、日本薬機法／景表法；包裝稿三方比對校稿；自建台美日法規索引站與合規檢查流程。</span><span class="en">Formulation, packaging and claims aligned to Taiwan Food Safety Act, AAFCO and Japan Yakukihō / Keihyōhō; three-way label proofing; built a TW/US/JP regulations index and compliance-check workflow.</span></p></div></div>
+            <div class="cap"><span class="k"></span><div><b><span class="zh">AI 工作流與內部工具</span><span class="en">AI Workflows & Internal Tools</span></b><p><span class="zh">以 Claude 為主力共同開發者（也用 ChatGPT／Codex、Gemini），做出 8 個內部網站與 1 條每天自動跑的資料流水線；新模型出來先親自測，再決定推給團隊。</span><span class="en">Claude as primary co-developer (plus ChatGPT/Codex and Gemini): built 8 internal web tools and a daily data pipeline; I test every new model hands-on before rolling it out to the team.</span></p></div></div>
+          </div>
         </div>
         <div class="panel reveal d1">
           <h3><span class="ic">🧰</span><span class="zh">工具與平台</span><span class="en">Tools & Platforms</span></h3>
           <div class="chips">
-            <span class="chip">Meta / Google Ads</span><span class="chip">LINE@</span><span class="chip">KOL / KOC</span><span class="chip">Pet Expos</span><span class="chip">POP / Merchandising</span><span class="chip">Amazon Seller / Ads</span><span class="chip">momo · PChome · 91APP</span><span class="chip">PMP / Agile</span><span class="chip">AAFCO</span><span class="chip">薬機法 / 景表法</span><span class="chip">Anthropic Claude</span><span class="chip">Excel / PowerPoint</span>
+            <span class="chip">Meta / Google Ads</span><span class="chip">LINE@</span><span class="chip">KOL / KOC</span><span class="chip">Pet Expos</span><span class="chip">POP / Merchandising</span><span class="chip">Amazon Seller / Ads</span><span class="chip">momo · PChome · 91APP</span><span class="chip">PMP / Agile</span><span class="chip">AAFCO</span><span class="chip">薬機法 / 景表法</span><span class="chip">Anthropic Claude</span><span class="chip">ChatGPT / Codex</span><span class="chip">Google Gemini</span><span class="chip">Excel / PowerPoint</span>
           </div>
         </div>
       </div>
