@@ -10,7 +10,7 @@
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="范鈞豪 Chun-Hao Fan, DVM · 獸醫師 × 產品開發 × 品牌行銷">
-<meta property="og:description" content="走出診間的獸醫，把臨床專業帶進產品與品牌。6 品牌 × 9 市場新品開發與法規；以 AI 自建 8 個內部工具與每日資料流水線。">
+<meta property="og:description" content="走出診間的獸醫，把臨床專業帶進產品與品牌。6 品牌 × 9 市場新品開發與法規；以 AI 自建 11 個內部工具與每日資料流水線。">
 <meta property="og:url" content="https://beck-resume.beck810404.workers.dev/">
 <meta property="og:image" content="https://beck-resume.beck810404.workers.dev/img/og.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
@@ -171,7 +171,7 @@
   .tl-item.minor .tl-card h3{font-size:1.02rem}
 
   /* PROJECTS */
-  .proj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
   .proj{
     background:var(--white);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
     transition:.3s;display:flex;flex-direction:column;cursor:default;
@@ -191,6 +191,7 @@
   .t6{background:linear-gradient(135deg,#5a6b7d,#3a4756)}
   .t7{background:linear-gradient(135deg,#7a5aa6,#4f3a78)}
   .t8{background:linear-gradient(135deg,#0f6d8c,#0a4a60)}
+  .t9{background:linear-gradient(135deg,#c28a2c,#8f6118)}
   .proj .body{padding:22px 22px 24px;flex:1;display:flex;flex-direction:column}
   .proj h3{font-size:1.12rem;margin-bottom:.5rem;line-height:1.3}
   .proj p{font-size:.92rem;color:var(--ink-soft);flex:1;margin-bottom:1rem}
@@ -260,6 +261,7 @@
     .hero-grid{grid-template-columns:1fr}
     .hero-photo{justify-self:start;width:200px;height:200px;order:-1}
     .proj-grid{grid-template-columns:1fr 1fr}
+    .proj-grid>.proj:last-child:nth-child(odd){grid-column:span 2}
   }
   @media(max-width:680px){
     .nav-links{position:fixed;inset:68px 0 auto 0;flex-direction:column;background:var(--paper);padding:16px 28px 24px;border-bottom:1px solid var(--line);gap:2px;transform:translateY(-120%);transition:.35s;align-items:stretch}
@@ -267,6 +269,7 @@
     .nav-links a{padding:.7rem .6rem}
     .nav-toggle{display:flex}
     .proj-grid{grid-template-columns:1fr}
+    .proj-grid>.proj:last-child:nth-child(odd){grid-column:auto}
     .stats{grid-template-columns:1fr 1fr}
     .hero-photo{width:150px;height:150px}
     section{padding:70px 0}
@@ -287,7 +290,7 @@
     .hero-photo img{border-width:2pt;box-shadow:none}
     .about-side{position:static}
     .stat,.chapter,.tl-card,.proj,.panel,.award,.quote,.cap{break-inside:avoid;box-shadow:none!important}
-    .proj-grid{grid-template-columns:1fr 1fr 1fr 1fr}
+    .proj-grid{grid-template-columns:1fr 1fr 1fr}
     .proj .thumb{height:70pt}
     .btn,.c-btn{border:1px solid #999!important;background:none!important;color:#000!important;box-shadow:none!important;transform:none!important}
     .btn-primary::after,.c-btn.solid::after{content:" " attr(href);font-weight:400;font-size:.8em}
@@ -541,7 +544,7 @@
 
       <div class="proj reveal d2"><div class="thumb t5 has-img"><img src="img/demo/pet-food-regulations.jpg" alt="" loading="lazy"></div><div class="body">
         <h3><span class="zh">法規與宣稱合規 · TW／US／JP</span><span class="en">Regulatory &amp; Claims Compliance</span></h3>
-        <p><span class="zh">配方、包裝與宣稱對齊台灣食安法、AAFCO、日本薬機法／景表法；包裝稿三方比對，降低標示與法規風險。</span><span class="en">Formulation, packaging and claims aligned to Taiwan Food Safety Act, AAFCO and Japan Yakukihō / Keihyōhō; three-way proof checks to cut labeling risk.</span></p>
+        <p><span class="zh">配方、包裝與宣稱對齊台灣動保法寵物食品專章、AAFCO、日本薬機法／景表法；包裝稿三方比對，降低標示與法規風險。</span><span class="en">Formulation, packaging and claims aligned to Taiwan Animal Protection Act (pet food chapter), AAFCO and Japan Yakukihō / Keihyōhō; three-way proof checks to cut labeling risk.</span></p>
         <div class="tags"><span class="tag">Compliance</span><span class="tag">QA</span></div>
       </div></div>
 
@@ -553,8 +556,14 @@
 
       <div class="proj reveal d4"><div class="thumb t8 has-img"><img src="img/proj-ai-toolchain.jpg" alt="" loading="lazy"></div><div class="body">
         <h3><span class="zh">AI 內部工具鏈</span><span class="en">AI Internal Toolchain</span></h3>
-        <p><span class="zh">以 Claude 為共同開發者，做出 8 個內部網站（品質溯源、新品看板、產品資訊儀表板、成本試算、法規索引…）與每天 16:00 自動跑的資料流水線，全部跑在免費方案上。</span><span class="en">With Claude as co-developer, built 8 internal web tools (quality traceability, product Kanban, product dashboard, cost calculator, regulations index…) and a daily 16:00 data pipeline — all on free tiers.</span></p>
+        <p><span class="zh">以 Claude 為共同開發者，做出 11 個內部網站（品質溯源、新品看板、產品資訊儀表板、成本試算、法規索引、設計需求表單…）與每天 16:00 自動跑的資料流水線，全部跑在免費方案上。</span><span class="en">With Claude as co-developer, built 11 internal web tools (quality traceability, product Kanban, product dashboard, cost calculator, regulations index, design request form…) and a daily 16:00 data pipeline — all on free tiers.</span></p>
         <div class="tags"><span class="tag">Claude</span><span class="tag">Automation</span><span class="tag">Cloudflare</span></div>
+      </div></div>
+
+      <div class="proj reveal d1"><div class="thumb t9">📊</div><div class="body">
+        <h3><span class="zh">Amazon 數據驅動 SKU 管理</span><span class="en">Data-driven Amazon SKU Management</span></h3>
+        <p><span class="zh">串接 Helium 10 與 Amazon 品牌分析：每季自動體檢每支 SKU 的費用、廣告、退貨與庫齡，拆解搜尋詞從曝光、點擊到購買的漏斗，並每天監控競品價格與跟賣。</span><span class="en">Connected Helium 10 and Amazon Brand Analytics to run a quarterly health check on every SKU (fees, ads, returns, inventory age), break down search-term funnels from impression to purchase, and monitor competitor pricing and hijackers daily.</span></p>
+        <div class="tags"><span class="tag">Amazon</span><span class="tag">Analytics</span><span class="tag">Helium 10</span></div>
       </div></div>
 
     </div>
@@ -578,7 +587,7 @@
           <ul>
             <li><span class="zh"><strong>市場情報：</strong>跨 TW／US／JP 做競品、定價與原料趨勢研究，回饋新品定位與上市決策。</span><span class="en"><strong>Market intelligence:</strong> Cross-market competitor, pricing and ingredient-trend research (TW/US/JP) feeding positioning and launch decisions.</span></li>
             <li><span class="zh"><strong>新品策略：</strong>標準化新品提案框架（競品格局、定位、三階定價、規格），從概念到上市。</span><span class="en"><strong>Launch strategy:</strong> Standardized the proposal framework — competitive landscape, positioning, three-tier pricing, full specs — from concept to launch.</span></li>
-            <li><span class="zh"><strong>法規與宣稱：</strong>確保配方、包裝與宣稱符合台灣食安法、AAFCO、日本薬機法／景表法。</span><span class="en"><strong>Regulatory &amp; claims:</strong> Formulation, packaging and claims compliant with Taiwan Food Safety Act, AAFCO and Japan Yakukihō / Keihyōhō.</span></li>
+            <li><span class="zh"><strong>法規與宣稱：</strong>確保配方、包裝與宣稱符合台灣動保法寵物食品專章、AAFCO、日本薬機法／景表法。</span><span class="en"><strong>Regulatory &amp; claims:</strong> Formulation, packaging and claims compliant with Taiwan Animal Protection Act (pet food chapter), AAFCO and Japan Yakukihō / Keihyōhō.</span></li>
             <li><span class="zh"><strong>藥廠合作：</strong>推動與順天堂藥廠合作開發關節、毛髮、視力、心血管功能性保健品。</span><span class="en"><strong>Pharma partnership:</strong> Drove the Sun Ten Pharmaceutical collaboration on joint, coat, vision and cardiovascular supplements.</span></li>
             <li><span class="zh"><strong>AI 工作流：</strong>導入 Claude 建置內部工具，把數天的競品與法規研究壓成數小時。</span><span class="en"><strong>AI workflows:</strong> Built internal Claude tools that compress days of competitor and regulatory research into hours.</span></li>
           </ul>
@@ -677,8 +686,8 @@
             <div class="cap"><span class="k"></span><div><b><span class="zh">市場情報與競品分析</span><span class="en">Market Intelligence & Competitor Analysis</span></b><p><span class="zh">每年走 6+ 場國際展會（Interzoo、Global Pet Expo、SuperZoo、Interpet、VIV Asia）；把新品提案標準化成競品格局、定位象限、三階定價的固定框架。</span><span class="en">6+ international shows a year (Interzoo, Global Pet Expo, SuperZoo, Interpet, VIV Asia); standardized proposals into a fixed framework — landscape, positioning map, three-tier pricing.</span></p></div></div>
             <div class="cap"><span class="k"></span><div><b><span class="zh">跨部門協調與專案管理</span><span class="en">Cross-functional & Project Management</span></b><p><span class="zh">PMP · CSM · CSPO。從零重建 8 人團隊，100+ SKU 準時上市；用設計需求單流程與進度看板讓六個部門看同一份進度。</span><span class="en">PMP · CSM · CSPO. Rebuilt an 8-person team from zero and shipped 100+ SKUs on time; design-request workflow and a live Kanban keep six departments on one view of progress.</span></p></div></div>
             <div class="cap"><span class="k"></span><div><b><span class="zh">數位媒體與電商營運</span><span class="en">Digital Media & E-commerce</span></b><p><span class="zh">Amazon 日本店營收翻倍並導入新品、操盤美國店廣告；momo／PChome／91APP 台灣電商；Amazon Sponsored Ads Advanced 認證。</span><span class="en">Doubled Amazon Japan revenue and launched new SKUs; ran US store advertising; momo / PChome / 91APP in Taiwan; Amazon Sponsored Ads Advanced certified.</span></p></div></div>
-            <div class="cap"><span class="k"></span><div><b><span class="zh">法規與宣稱合規（TW · US · JP）</span><span class="en">Regulatory & Claims (TW · US · JP)</span></b><p><span class="zh">配方、包裝與宣稱對齊台灣食安法、AAFCO、日本薬機法／景表法；包裝稿三方比對校稿；自建台美日法規索引站與合規檢查流程。</span><span class="en">Formulation, packaging and claims aligned to Taiwan Food Safety Act, AAFCO and Japan Yakukihō / Keihyōhō; three-way label proofing; built a TW/US/JP regulations index and compliance-check workflow.</span></p></div></div>
-            <div class="cap"><span class="k"></span><div><b><span class="zh">AI 工作流與內部工具</span><span class="en">AI Workflows & Internal Tools</span></b><p><span class="zh">以 Claude 為主力共同開發者（也用 ChatGPT／Codex、Gemini），做出 8 個內部網站與 1 條每天自動跑的資料流水線；新模型出來先親自測，再決定推給團隊。</span><span class="en">Claude as primary co-developer (plus ChatGPT/Codex and Gemini): built 8 internal web tools and a daily data pipeline; I test every new model hands-on before rolling it out to the team.</span></p></div></div>
+            <div class="cap"><span class="k"></span><div><b><span class="zh">法規與宣稱合規（TW · US · JP）</span><span class="en">Regulatory & Claims (TW · US · JP)</span></b><p><span class="zh">配方、包裝與宣稱對齊台灣動保法寵物食品專章、AAFCO、日本薬機法／景表法；包裝稿三方比對校稿；自建台美日法規索引站與合規檢查流程。</span><span class="en">Formulation, packaging and claims aligned to Taiwan Animal Protection Act (pet food chapter), AAFCO and Japan Yakukihō / Keihyōhō; three-way label proofing; built a TW/US/JP regulations index and compliance-check workflow.</span></p></div></div>
+            <div class="cap"><span class="k"></span><div><b><span class="zh">AI 工作流與內部工具</span><span class="en">AI Workflows & Internal Tools</span></b><p><span class="zh">以 Claude 為主力共同開發者（也用 ChatGPT／Codex、Gemini），做出 11 個內部網站與 1 條每天自動跑的資料流水線；新模型出來先親自測，再決定推給團隊。</span><span class="en">Claude as primary co-developer (plus ChatGPT/Codex and Gemini): built 11 internal web tools and a daily data pipeline; I test every new model hands-on before rolling it out to the team.</span></p></div></div>
           </div>
         </div>
         <div class="panel reveal d1">
@@ -845,9 +854,9 @@
   var DEMO=[
     {key:'overview',kind:'overview',
      title:['一個人的產品部數位工具鏈','A one-person product-ops toolchain'],
-     sub:['總覽 · 8 個站 + 1 條流水線','Overview · 8 sites + 1 pipeline'],
-     pitch:['產品研發部沒有工程師。我把 Claude 當共同開發者，把每天重複的資料整理、進度追蹤、法規查證做成 8 個網站和 1 條每天自動跑的流水線，全部跑在免費方案上。',
-            'The product team has no engineers. Using Claude as a co-developer, I turned the daily grind of data wrangling, progress tracking and regulatory look-ups into 8 web tools and 1 daily pipeline — all on free tiers.'],
+     sub:['總覽 · 精選 8 個站 + 1 條流水線','Overview · 8 featured sites + 1 pipeline'],
+     pitch:['產品研發部沒有工程師。我把 Claude 當共同開發者，把每天重複的資料整理、進度追蹤、法規查證做成 11 個網站和 1 條每天自動跑的流水線，全部跑在免費方案上；這裡精選 8 個。',
+            'The product team has no engineers. Using Claude as a co-developer, I turned the daily grind of data wrangling, progress tracking and regulatory look-ups into 11 web tools and 1 daily pipeline — all on free tiers. Eight are featured here.'],
      flow:[
        ['📊',['Excel 主檔','Excel masters'],['OneDrive 共用資料夾；同事照常編輯','Shared OneDrive; colleagues edit as usual']],
        ['🐍',['Python + Claude skills','Python + Claude skills'],['review-first：先出比對表、核可才寫回','Review-first: propose, approve, then write back']],
