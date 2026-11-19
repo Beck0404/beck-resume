@@ -200,6 +200,22 @@
 
   /* SKILLS */
   #skills{background:var(--paper-2)}
+
+  /* AI APPROACH */
+  #ai{background:var(--white)}
+  .ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .ai-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:26px 26px 22px;display:flex;flex-direction:column}
+  .ai-card .ic{width:40px;height:40px;border-radius:11px;background:var(--accent-soft);display:grid;place-items:center;font-size:1.2rem;margin-bottom:1rem}
+  .ai-card h3{font-size:1.1rem;line-height:1.35;margin-bottom:.35rem}
+  .ai-card .sub{font-size:.86rem;color:var(--accent-deep);font-weight:600;margin-bottom:.9rem}
+  .ai-card ul{list-style:none;font-size:.9rem;color:var(--ink-soft);flex:1}
+  .ai-card li{padding-left:1rem;position:relative;margin-bottom:.45rem;line-height:1.55}
+  .ai-card li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+  .ai-card .res{margin-top:1rem;padding-top:.9rem;border-top:1px dashed var(--line);font-size:.88rem;font-weight:600}
+  .ai-guard{margin-top:22px;padding:18px 22px;border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:var(--r);background:var(--paper);font-size:.92rem;color:var(--ink-soft)}
+  .ai-guard b{color:var(--ink)}
+  .tbd{background:#fff3c4;color:#7a5a00;border-radius:4px;padding:0 .3em;font-weight:700}
+  @media(max-width:900px){.ai-grid{grid-template-columns:1fr}}
   .skills-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:46px}
   .panel{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:28px 30px}
   .panel h3{font-size:1.05rem;margin-bottom:1.3rem;display:flex;align-items:center;gap:.6rem}
@@ -412,6 +428,7 @@
     <div class="nav-links" id="navlinks">
       <a href="#about"><span class="zh">關於我</span><span class="en">About</span></a>
       <a href="#projects"><span class="zh">作品專案</span><span class="en">Projects</span></a>
+      <a href="#ai"><span class="zh">AI 應用</span><span class="en">AI</span></a>
       <a href="#experience"><span class="zh">經歷</span><span class="en">Experience</span></a>
       <a href="#skills"><span class="zh">技能工具</span><span class="en">Skills</span></a>
       <a href="#contact"><span class="zh">聯絡</span><span class="en">Contact</span></a>
@@ -491,7 +508,7 @@
         <div class="stat reveal d3"><div class="n" data-count="600" data-suffix="%">0</div><div class="l"><span class="zh">台灣電商營收成長</span><span class="en">TW e-commerce growth</span></div></div>
         <div class="stat reveal d4"><div class="n" data-count="6" data-suffix="+">0</div><div class="l"><span class="zh">國際展會 / 年</span><span class="en">Int'l trade shows / yr</span></div></div>
         <div class="stat reveal d5"><div class="n" data-count="6">0</div><div class="l"><span class="zh">負責品牌</span><span class="en">Brands in portfolio</span></div></div>
-        <div class="stat reveal d5"><div class="n" data-count="8">0</div><div class="l"><span class="zh">AI 自建工具</span><span class="en">AI-built tools shipped</span></div></div>
+        <div class="stat reveal d5"><div class="n" data-count="12">0</div><div class="l"><span class="zh">AI 自建工具</span><span class="en">AI-built tools shipped</span></div></div>
       </div>
       <figure class="award reveal d3">
         <img src="img/award-2024.jpg" alt="" loading="lazy" width="800" height="1000">
@@ -567,6 +584,57 @@
       </div></div>
 
     </div>
+  </div>
+</section>
+
+<!-- AI APPROACH -->
+<section id="ai">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag"><span class="zh">AI 應用</span><span class="en">How I Use AI</span></div>
+      <h2><span class="zh">我不會寫程式，<br>但我把 AI 當成團隊來帶。</span><span class="en">I don't code —<br>I lead AI like a team.</span></h2>
+      <p><span class="zh">有人幫我跑腿、有人幫我抓錯、有人幫我把東西做出來。目標不只是自己變快，而是讓整個團隊少做重工、少出錯。</span><span class="en">Some run errands, some catch mistakes, some build things. The goal isn't just making me faster — it's less rework and fewer errors for the whole team.</span></p>
+    </div>
+    <div class="ai-grid">
+
+      <div class="ai-card reveal d1">
+        <div class="ic">🔄</div>
+        <h3><span class="zh">把散落的資料變成團隊每天在用的系統</span><span class="en">Turning scattered data into systems the team uses daily</span></h3>
+        <div class="sub"><span class="zh">資訊流 · 工作流 · 自動化</span><span class="en">Information flow · Workflow · Automation</span></div>
+        <ul>
+          <li><span class="zh">新品進度、產品資訊、設計案件每天 15:30 自動同步到線上看板</span><span class="en">New-product progress, product data and design jobs sync to live dashboards every day at 15:30</span></li>
+          <li><span class="zh">設計需求從發案、派工、校稿到歸檔，三個部門走同一套流程</span><span class="en">Design requests — brief, assignment, proofing, archive — run on one shared flow across three departments</span></li>
+          <li><span class="zh">依部門開放權限，大家看同一份即時資料，不再互相追問進度</span><span class="en">Role-based access puts everyone on the same live data instead of chasing status updates</span></li>
+        </ul>
+        <div class="res"><span class="zh">規模：一年內追蹤 480+ 個新品開發案，跨 6 品牌、9 市場</span><span class="en">Scale: 480+ new-product tracks in 12 months, across 6 brands and 9 markets</span></div>
+      </div>
+
+      <div class="ai-card reveal d2">
+        <div class="ic">🛡️</div>
+        <h3><span class="zh">讓 AI 當第二雙眼睛，錯誤不流出去</span><span class="en">AI as a second pair of eyes — errors don't ship</span></h3>
+        <div class="sub"><span class="zh">品質把關 · 法規合規</span><span class="en">Quality gate · Compliance</span></div>
+        <ul>
+          <li><span class="zh">包裝標籤和產品資料、規格表三方比對，逐項核對成分、淨重、條碼、版次</span><span class="en">Three-way check of labels against product data and specs — ingredients, net weight, barcode, version</span></li>
+          <li><span class="zh">品號申請表自動對照編碼規則，送出前先抓錯</span><span class="en">Product-code applications checked against coding rules before submission</span></li>
+          <li><span class="zh">台、美、日三地法規宣稱檢查，避免療效或絕對性用語</span><span class="en">TW / US / JP claims screening to catch therapeutic or absolute wording</span></li>
+        </ul>
+        <div class="res"><span class="zh">規模：每張包裝稿逐項核對 10 類資料，涵蓋台、美、日 3 個市場的法規</span><span class="en">Scale: 10 data fields checked on every label, against TW / US / JP regulations</span></div>
+      </div>
+
+      <div class="ai-card reveal d3">
+        <div class="ic">🛠️</div>
+        <h3><span class="zh">不靠工程師，自己把工具做出來</span><span class="en">Building the tools myself — no engineers needed</span></h3>
+        <div class="sub"><span class="zh">能力擴張 · 第二大腦</span><span class="en">New capabilities · Second brain</span></div>
+        <ul>
+          <li><span class="zh">以 Claude 為共同開發者，上線 12 個內部網站，全部跑在免費方案上</span><span class="en">12 internal web tools shipped with Claude as co-developer, all on free tiers</span></li>
+          <li><span class="zh">600+ 支產品的 3D 包裝檢視、產品示意圖，由 AI 製作、再自動驗收</span><span class="en">3D packaging views for 600+ products and product mockups — made by AI, then checked automatically</span></li>
+          <li><span class="zh">把每次踩過的雷寫成規則和說明文件，經驗不會因為換人而斷掉</span><span class="en">Every lesson learned becomes a written rule, so know-how survives staff changes</span></li>
+        </ul>
+        <div class="res"><span class="zh">規模：12 個網站、600+ 支產品 3D 檢視，一人完成、網站全跑在免費方案上</span><span class="en">Scale: 12 web tools and 600+ product 3D views — built solo, all hosted on free tiers</span></div>
+      </div>
+
+    </div>
+    <div class="ai-guard reveal"><b><span class="zh">底線：</span><span class="en">Guardrails:</span></b> <span class="zh">AI 不替我按送出、不刪檔、不改權限；對外資料一律人工核可才上線。速度可以交給 AI，判斷和責任留在人身上。</span><span class="en">AI never hits submit, deletes files or changes permissions for me; anything external goes live only after human sign-off. Speed can be delegated — judgement and accountability stay with people.</span></div>
   </div>
 </section>
 
